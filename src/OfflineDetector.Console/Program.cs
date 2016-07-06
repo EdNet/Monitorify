@@ -11,9 +11,9 @@ namespace OfflineDetector.Console
 
             var builder = new ConfigurationBuilder()
                 .SetBasePath(currentDirectoryPath)
-                .AddJsonFile("urls.json", optional: false, reloadOnChange: false);
+                .AddJsonFile("endpoints.json", optional: false, reloadOnChange: false);
             IConfigurationRoot configuration = builder.Build();
-            IConfigurationSection section = configuration.GetSection("test");
+            IConfigurationSection section = configuration.GetSection("endpoints");
 
             System.Console.ReadLine();
         }

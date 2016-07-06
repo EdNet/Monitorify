@@ -1,4 +1,5 @@
 *.user
+*.cache
 bin
 obj
 packages

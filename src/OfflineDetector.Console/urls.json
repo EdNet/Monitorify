@@ -1,0 +1,12 @@
+﻿{
+  "urls": [
+    {
+      "name": "google",
+      "value": "http://www.google.com"
+    },
+    {
+      "name": "bing",
+      "value": "http://www.bing.com"
+    }
+  ]
+}

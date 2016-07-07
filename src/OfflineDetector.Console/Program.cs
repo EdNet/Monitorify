@@ -9,6 +9,8 @@ namespace OfflineDetector.Console
         {
             var currentDirectoryPath = Directory.GetCurrentDirectory();
             IConfigurationReader provider = new JsonFileConfigurationReader();
+            provider.SetSource($"{currentDirectoryPath}\\urls.json");
+            var endpoints = provider.Read();
 
             System.Console.ReadLine();
         }

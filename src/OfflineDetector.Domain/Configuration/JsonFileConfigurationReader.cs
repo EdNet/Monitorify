@@ -1,12 +1,32 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace OfflineDetector.Domain.Configuration
 {
     public class JsonFileConfigurationReader : IConfigurationReader
     {
-        public IEnumerable<EndPoint> Read()
+        private string _sourcePath;
+
+        public void SetSource(string sourcePath)
         {
-            throw new System.NotImplementedException();
+            _sourcePath = sourcePath;
+        }
+
+        public IConfiguration Read()
+        {
+            if (string.IsNullOrEmpty(_sourcePath))
+            {
+                throw new ArgumentException("Source path cannot be empty", "sourcePath");
+            }
+
+            using (StreamReader file = File.OpenText(_sourcePath))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                IConfiguration configuration = (JsonConfiguration)serializer.Deserialize(file, typeof(JsonConfiguration));
+
+                return configuration;
+            }
         }
     }
 }

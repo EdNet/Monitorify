@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using OfflineDetector.Domain.Configuration;
 
 namespace OfflineDetector.Domain
 {
     public class OfflineDetectorService : IOfflineDetectorService
     {
-        public Task Start(IEnumerable<EndPoint> endpoints)
+        public Task Start(IConfiguration configuration)
         {
             throw new System.NotImplementedException();
         }

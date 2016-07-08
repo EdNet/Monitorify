@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using OfflineDetector.Domain;
 using OfflineDetector.Domain.Configuration;
 
 namespace OfflineDetector.Console
@@ -8,9 +9,14 @@ namespace OfflineDetector.Console
         public static void Main(string[] args)
         {
             var currentDirectoryPath = Directory.GetCurrentDirectory();
+
             IConfigurationReader provider = new JsonFileConfigurationReader();
             provider.SetSource($"{currentDirectoryPath}\\urls.json");
-            var endpoints = provider.Read();
+
+            IConfiguration configuration = provider.Read();
+
+            IOfflineDetectorService offlineDetectorService = new OfflineDetectorService();
+            offlineDetectorService.Start(configuration);
 
             System.Console.ReadLine();
         }

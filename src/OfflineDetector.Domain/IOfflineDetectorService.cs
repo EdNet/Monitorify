@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using OfflineDetector.Domain.Configuration;
 
 namespace OfflineDetector.Domain
 {
     public interface IOfflineDetectorService
     {
-        Task Start(IEnumerable<EndPoint> endpoints);
+        Task Start(IConfiguration configuration);
     }
 }

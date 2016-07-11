@@ -1,4 +1,4 @@
-﻿namespace OfflineDetector.Core.Configuration
+﻿namespace Monitorify.Core.Configuration
 {
     public interface IConfigurationReader
     {

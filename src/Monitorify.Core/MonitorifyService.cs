@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using OfflineDetector.Core.Configuration;
+using Monitorify.Core.Configuration;
 
-namespace OfflineDetector.Core
+namespace Monitorify.Core
 {
-    public class OfflineDetectorService : IOfflineDetectorService
+    public class MonitorifyService : IMonitorifyService
     {
         private readonly IList<IUrlListener> _listeners;
 
@@ -15,7 +15,7 @@ namespace OfflineDetector.Core
         public event Action<EndPoint> ReportedOnline;
         public event Action<Exception> ErrorOccured;
 
-        public OfflineDetectorService()
+        public MonitorifyService()
         {
             _listeners = new List<IUrlListener>();
         }

@@ -1,16 +1,15 @@
 ﻿using System;
-using OfflineDetector.Core.Configuration;
+using System.Threading.Tasks;
 
-namespace OfflineDetector.Core
+namespace Monitorify.Core
 {
-    public interface IOfflineDetectorService
+    public interface IUrlListener
     {
         event Action<EndPoint> ListenerStarted;
         event Action<EndPoint> ListenerEnded;
         event Action<EndPoint> ReportedOffline;
         event Action<EndPoint> ReportedOnline;
         event Action<Exception> ErrorOccured;
-
-        void Start(IConfiguration configuration);
+        Task StartListening();
     }
 }

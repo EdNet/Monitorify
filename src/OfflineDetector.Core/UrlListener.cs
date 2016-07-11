@@ -1,19 +1,30 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 
 namespace OfflineDetector.Core
 {
     class UrlListener : IUrlListener
     {
-        private EndPoint _endPoint;
+        private readonly EndPoint _endPoint;
+
+        public event Action<EndPoint> ListenerStarted;
 
         public UrlListener(EndPoint endPoint)
         {
             this._endPoint = endPoint;
+            this._endPoint.Delay = GenerateDelay();
+        }
+
+        private int GenerateDelay()
+        {
+            Random rnd = new Random();
+            return rnd.Next(1, 5) * 1000;
         }
 
         public Task StartListening()
         {
-            throw new System.NotImplementedException();
+            ListenerStarted?.Invoke(_endPoint);
+            return Task.Delay(_endPoint.Delay);
         }
     }
 }

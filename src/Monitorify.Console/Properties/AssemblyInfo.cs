@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("OfflineDetector.Domain")]
+[assembly: AssemblyProduct("Monitorify.Console")]
 [assembly: AssemblyTrademark("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -16,4 +16,4 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("725bad53-26da-4654-9e0d-e68c3f0b3438")]
+[assembly: Guid("19f94f62-dadb-4a7c-be14-3862821d1e40")]

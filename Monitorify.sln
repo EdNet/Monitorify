@@ -10,9 +10,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "OfflineDetector.Console", "src\OfflineDetector.Console\OfflineDetector.Console.xproj", "{19F94F62-DADB-4A7C-BE14-3862821D1E40}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Monitorify.Console", "src\Monitorify.Console\Monitorify.Console.xproj", "{19F94F62-DADB-4A7C-BE14-3862821D1E40}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "OfflineDetector.Core", "src\OfflineDetector.Core\OfflineDetector.Core.xproj", "{725BAD53-26DA-4654-9E0D-E68C3F0B3438}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Monitorify.Core", "src\Monitorify.Core\Monitorify.Core.xproj", "{725BAD53-26DA-4654-9E0D-E68C3F0B3438}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

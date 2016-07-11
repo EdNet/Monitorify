@@ -1,4 +1,4 @@
-﻿namespace OfflineDetector.Core
+﻿namespace Monitorify.Core
 {
     public class EndPoint
     {

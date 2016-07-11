@@ -2,7 +2,7 @@
 using System.IO;
 using Newtonsoft.Json;
 
-namespace OfflineDetector.Core.Configuration
+namespace Monitorify.Core.Configuration
 {
     public class JsonFileConfigurationReader : IConfigurationReader
     {

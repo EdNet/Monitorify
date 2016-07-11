@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace OfflineDetector.Core
+namespace Monitorify.Core
 {
     class UrlListener : IUrlListener
     {

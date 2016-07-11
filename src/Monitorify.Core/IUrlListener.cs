@@ -10,6 +10,6 @@ namespace Monitorify.Core
         event Action<EndPoint> ReportedOffline;
         event Action<EndPoint> ReportedOnline;
         event Action<Exception> ErrorOccured;
-        Task StartListening();
+        Task StartListening(TimeSpan delay);
     }
 }

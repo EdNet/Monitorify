@@ -11,7 +11,7 @@ namespace Monitorify.Console
             var currentDirectoryPath = Directory.GetCurrentDirectory();
 
             IConfigurationReader provider = new JsonFileConfigurationReader();
-            provider.SetSource($"{currentDirectoryPath}\\urls.json");
+            provider.SetSource($"{currentDirectoryPath}\\config.json");
             IConfiguration configuration = provider.Read();
 
             IMonitorifyService service = new MonitorifyService();

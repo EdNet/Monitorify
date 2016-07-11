@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using Monitorify.Core.Configuration;
 
@@ -28,8 +29,7 @@ namespace Monitorify.Core
                 _listeners.Add(listener);
 
                 SubscribeForEvents(listener);
-
-                Task.Factory.StartNew(() => listener.StartListening());
+                Task.Factory.StartNew(() => listener.StartListening(configuration.PingDelay));
             }
         }
 

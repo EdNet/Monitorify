@@ -8,10 +8,12 @@ namespace Monitorify.Console
     {
         public static void Main(string[] args)
         {
-            var currentDirectoryPath = Directory.GetCurrentDirectory();
+            var filepath = $"{Directory.GetCurrentDirectory()}\\config.json";
+            System.Console.WriteLine(filepath);
+            System.Console.ReadLine();
 
             IConfigurationReader provider = new JsonFileConfigurationReader();
-            provider.SetSource($"{currentDirectoryPath}\\urls.json");
+            provider.SetSource(filepath);
             IConfiguration configuration = provider.Read();
 
             IMonitorifyService service = new MonitorifyService();

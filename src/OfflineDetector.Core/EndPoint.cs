@@ -1,4 +1,4 @@
-﻿namespace OfflineDetector.Domain
+﻿namespace OfflineDetector.Core
 {
     public class EndPoint
     {

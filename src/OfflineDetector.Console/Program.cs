@@ -1,6 +1,6 @@
 ﻿using System.IO;
-using OfflineDetector.Domain;
-using OfflineDetector.Domain.Configuration;
+using OfflineDetector.Core;
+using OfflineDetector.Core.Configuration;
 
 namespace OfflineDetector.Console
 {

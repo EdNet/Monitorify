@@ -1,4 +1,4 @@
-﻿namespace OfflineDetector.Domain.Configuration
+﻿namespace OfflineDetector.Core.Configuration
 {
     public interface IConfigurationReader
     {

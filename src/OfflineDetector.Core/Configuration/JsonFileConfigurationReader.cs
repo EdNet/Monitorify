@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 
-namespace OfflineDetector.Domain.Configuration
+namespace OfflineDetector.Core.Configuration
 {
     public class JsonFileConfigurationReader : IConfigurationReader
     {

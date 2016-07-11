@@ -1,10 +1,9 @@
-﻿using System.Threading.Tasks;
-using OfflineDetector.Domain.Configuration;
+﻿using OfflineDetector.Core.Configuration;
 
-namespace OfflineDetector.Domain
+namespace OfflineDetector.Core
 {
     public interface IOfflineDetectorService
     {
-        Task Start(IConfiguration configuration);
+        void Start(IConfiguration configuration);
     }
 }

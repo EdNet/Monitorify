@@ -1,13 +1,27 @@
-﻿using System.Threading.Tasks;
-using OfflineDetector.Domain.Configuration;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using OfflineDetector.Core.Configuration;
 
-namespace OfflineDetector.Domain
+namespace OfflineDetector.Core
 {
     public class OfflineDetectorService : IOfflineDetectorService
     {
-        public Task Start(IConfiguration configuration)
+        private IList<IUrlListener> _listeners;
+
+        public OfflineDetectorService()
         {
-            throw new System.NotImplementedException();
+            _listeners = new List<IUrlListener>();
+        }
+
+        public void Start(IConfiguration configuration)
+        {
+            foreach (var endPoint in configuration.EndPoints)
+            {
+                IUrlListener listener = new UrlListener(endPoint);
+                _listeners.Add(listener);
+
+                Task.Factory.StartNew(() => listener.StartListening());
+            }
         }
     }
 }

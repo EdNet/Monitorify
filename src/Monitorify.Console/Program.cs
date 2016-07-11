@@ -8,7 +8,8 @@ namespace Monitorify.Console
     {
         public static void Main(string[] args)
         {
-            var filepath = $"{Directory.GetCurrentDirectory()}\\config.json";
+            string filepath = Path.Combine(Directory.GetCurrentDirectory(), "config.json");
+
             System.Console.WriteLine(filepath);
             System.Console.ReadLine();
 

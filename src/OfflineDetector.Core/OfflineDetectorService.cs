@@ -11,6 +11,9 @@ namespace OfflineDetector.Core
 
         public event Action<EndPoint> ListenerStarted;
         public event Action<EndPoint> ListenerEnded;
+        public event Action<EndPoint> ReportedOffline;
+        public event Action<EndPoint> ReportedOnline;
+        public event Action<Exception> ErrorOccured;
 
         public OfflineDetectorService()
         {
@@ -24,16 +27,33 @@ namespace OfflineDetector.Core
                 IUrlListener listener = new UrlListener(endPoint);
                 _listeners.Add(listener);
 
-                if (ListenerStarted != null)
-                {
-                    listener.ListenerStarted += endpoint => ListenerStarted(endPoint);
-                }
-                if (ListenerEnded != null)
-                {
-                    listener.ListenerEnded += endpoint => ListenerEnded(endPoint);
-                }
+                SubscribeForEvents(listener);
 
                 Task.Factory.StartNew(() => listener.StartListening());
+            }
+        }
+
+        private void SubscribeForEvents(IUrlListener listener)
+        {
+            if (ErrorOccured != null)
+            {
+                listener.ErrorOccured += ex => ErrorOccured(ex);
+            }
+            if (ListenerStarted != null)
+            {
+                listener.ListenerStarted += endpoint => ListenerStarted(endpoint);
+            }
+            if (ListenerEnded != null)
+            {
+                listener.ListenerEnded += endpoint => ListenerEnded(endpoint);
+            }
+            if (ReportedOnline != null)
+            {
+                listener.ReportedOnline += endpoint => ReportedOnline(endpoint);
+            }
+            if (ReportedOffline != null)
+            {
+                listener.ReportedOffline += endpoint => ReportedOffline(endpoint);
             }
         }
     }

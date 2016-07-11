@@ -12,7 +12,6 @@ namespace OfflineDetector.Console
 
             IConfigurationReader provider = new JsonFileConfigurationReader();
             provider.SetSource($"{currentDirectoryPath}\\urls.json");
-
             IConfiguration configuration = provider.Read();
 
             IOfflineDetectorService offlineDetectorService = new OfflineDetectorService();

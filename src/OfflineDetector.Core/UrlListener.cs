@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace OfflineDetector.Core
@@ -9,19 +10,40 @@ namespace OfflineDetector.Core
 
         public event Action<EndPoint> ListenerStarted;
         public event Action<EndPoint> ListenerEnded;
+        public event Action<EndPoint> ReportedOffline;
+        public event Action<EndPoint> ReportedOnline;
+        public event Action<Exception> ErrorOccured;
 
         public UrlListener(EndPoint endPoint)
         {
             this._endPoint = endPoint;
         }
 
-        public Task StartListening()
+        public async Task StartListening()
         {
-            return Task.Factory.StartNew(() =>
+            ListenerStarted?.Invoke(_endPoint);
+
+            try
             {
-                ListenerStarted?.Invoke(_endPoint);
-                ListenerEnded?.Invoke(_endPoint);
-            });
+                using (HttpClient client = new HttpClient())
+                using (HttpResponseMessage response = await client.GetAsync(_endPoint.Url))
+                {
+                    if (response.IsSuccessStatusCode)
+                    {
+                        ReportedOnline?.Invoke(_endPoint);
+                    }
+                    else
+                    {
+                        ReportedOffline?.Invoke(_endPoint);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorOccured?.Invoke(ex);
+            }
+
+            ListenerEnded?.Invoke(_endPoint);
         }
     }
 }

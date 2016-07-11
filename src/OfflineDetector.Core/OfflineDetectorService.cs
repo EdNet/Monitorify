@@ -7,7 +7,7 @@ namespace OfflineDetector.Core
 {
     public class OfflineDetectorService : IOfflineDetectorService
     {
-        private IList<IUrlListener> _listeners;
+        private readonly IList<IUrlListener> _listeners;
 
         public event Action<EndPoint> ListenerStarted;
         public event Action<EndPoint> ListenerEnded;
@@ -23,13 +23,14 @@ namespace OfflineDetector.Core
             {
                 IUrlListener listener = new UrlListener(endPoint);
                 _listeners.Add(listener);
+
                 if (ListenerStarted != null)
                 {
-                    listener.ListenerStarted += (endpoint) => ListenerStarted(endPoint);
+                    listener.ListenerStarted += endpoint => ListenerStarted(endPoint);
                 }
                 if (ListenerEnded != null)
                 {
-                    listener.ListenerEnded += (endpoint) => ListenerEnded(endPoint);
+                    listener.ListenerEnded += endpoint => ListenerEnded(endPoint);
                 }
 
                 Task.Factory.StartNew(() => listener.StartListening());

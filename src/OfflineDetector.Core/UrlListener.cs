@@ -13,21 +13,13 @@ namespace OfflineDetector.Core
         public UrlListener(EndPoint endPoint)
         {
             this._endPoint = endPoint;
-            this._endPoint.Delay = GenerateDelay();
-        }
-
-        private int GenerateDelay()
-        {
-            Random rnd = new Random();
-            return rnd.Next(1, 5) * 1000;
         }
 
         public Task StartListening()
         {
-            ListenerStarted?.Invoke(_endPoint);
-            return Task.Delay(_endPoint.Delay)
-                .ContinueWith((prevTask) =>
+            return Task.Factory.StartNew(() =>
             {
+                ListenerStarted?.Invoke(_endPoint);
                 ListenerEnded?.Invoke(_endPoint);
             });
         }

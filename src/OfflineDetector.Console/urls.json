@@ -8,5 +8,6 @@
       "name": "bing",
       "url": "http://www.bing.com"
     }
-  ]
+  ],
+  "pingDelay": "00:01:00"
 }

@@ -16,15 +16,11 @@ namespace OfflineDetector.Console
             IConfiguration configuration = provider.Read();
 
             IOfflineDetectorService offlineDetectorService = new OfflineDetectorService();
-            offlineDetectorService.ListenerStarted += OfflineDetectorService_ListenerStarted;
+            offlineDetectorService.ListenerStarted += endpoint => System.Console.WriteLine($"Url listener {endpoint.Name} is Started with delay of {endpoint.Delay}");
+            offlineDetectorService.ListenerEnded += endpoint => System.Console.WriteLine($"Url listener {endpoint.Name} is Ended for Url {endpoint.Url}");
             offlineDetectorService.Start(configuration);
 
             System.Console.ReadLine();
-        }
-
-        private static void OfflineDetectorService_ListenerStarted(EndPoint obj)
-        {
-            System.Console.WriteLine($"Url listener {obj.Name} is started with delay of {obj.Delay}");
         }
     }
 }

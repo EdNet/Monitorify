@@ -10,6 +10,7 @@ namespace OfflineDetector.Core
         private IList<IUrlListener> _listeners;
 
         public event Action<EndPoint> ListenerStarted;
+        public event Action<EndPoint> ListenerEnded;
 
         public OfflineDetectorService()
         {
@@ -25,6 +26,10 @@ namespace OfflineDetector.Core
                 if (ListenerStarted != null)
                 {
                     listener.ListenerStarted += (endpoint) => ListenerStarted(endPoint);
+                }
+                if (ListenerEnded != null)
+                {
+                    listener.ListenerEnded += (endpoint) => ListenerEnded(endPoint);
                 }
 
                 Task.Factory.StartNew(() => listener.StartListening());

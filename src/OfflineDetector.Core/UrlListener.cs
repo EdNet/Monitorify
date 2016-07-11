@@ -8,6 +8,7 @@ namespace OfflineDetector.Core
         private readonly EndPoint _endPoint;
 
         public event Action<EndPoint> ListenerStarted;
+        public event Action<EndPoint> ListenerEnded;
 
         public UrlListener(EndPoint endPoint)
         {
@@ -24,7 +25,11 @@ namespace OfflineDetector.Core
         public Task StartListening()
         {
             ListenerStarted?.Invoke(_endPoint);
-            return Task.Delay(_endPoint.Delay);
+            return Task.Delay(_endPoint.Delay)
+                .ContinueWith((prevTask) =>
+            {
+                ListenerEnded?.Invoke(_endPoint);
+            });
         }
     }
 }

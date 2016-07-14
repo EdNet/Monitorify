@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Monitorify.Core
 {
-    class UrlListener : IUrlListener
+    internal class UrlListener : IUrlListener
     {
         private readonly EndPoint _endPoint;
         private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();

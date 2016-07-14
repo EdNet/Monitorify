@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Monitorify.Core
 {
-    public interface IUrlListener
+    internal interface IUrlListener
     {
         event Action<EndPoint> ListenerStarted;
         event Action<EndPoint> ListenerEnded;

@@ -2,7 +2,7 @@
   "locked": false,
   "version": 2,
   "targets": {
-    ".NETStandard,Version=v1.6": {
+    ".NETCoreApp,Version=v1.0": {
       "Microsoft.CSharp/4.0.1": {
         "type": "package",
         "dependencies": {
@@ -139,6 +139,15 @@
         },
         "runtime": {
           "lib/netstandard1.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "NUnit/3.4.1": {
+        "type": "package",
+        "compile": {
+          "lib/dotnet/nunit.framework.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/nunit.framework.dll": {}
         }
       },
       "runtime.native.System/4.0.0": {
@@ -1337,6 +1346,31 @@
         "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll",
         "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.xml",
         "tools/install.ps1"
+      ]
+    },
+    "NUnit/3.4.1": {
+      "sha512": "G/9h/ENn8+GvT5DvBqVNrUhIWuxtAr0/oVGN2ljKVUw50EAZYBzeWSy9s6nqMswaQACpQzljql1sWQ/peE2eJg==",
+      "type": "package",
+      "path": "NUnit/3.4.1",
+      "files": [
+        "CHANGES.txt",
+        "LICENSE.txt",
+        "NOTICES.txt",
+        "NUnit.3.4.1.nupkg.sha512",
+        "NUnit.nuspec",
+        "lib/dotnet/nunit.framework.dll",
+        "lib/dotnet/nunit.framework.xml",
+        "lib/net20/NUnit.System.Linq.dll",
+        "lib/net20/nunit.framework.dll",
+        "lib/net20/nunit.framework.xml",
+        "lib/net35/nunit.framework.dll",
+        "lib/net35/nunit.framework.xml",
+        "lib/net40/nunit.framework.dll",
+        "lib/net40/nunit.framework.xml",
+        "lib/net45/nunit.framework.dll",
+        "lib/net45/nunit.framework.xml",
+        "lib/portable-net45+win8+wp8+wpa81+Xamarin.Mac+MonoAndroid10+MonoTouch10+Xamarin.iOS10/nunit.framework.dll",
+        "lib/portable-net45+win8+wp8+wpa81+Xamarin.Mac+MonoAndroid10+MonoTouch10+Xamarin.iOS10/nunit.framework.xml"
       ]
     },
     "runtime.native.System/4.0.0": {
@@ -4358,9 +4392,10 @@
   "projectFileDependencyGroups": {
     "": [
       "Monitorify.Core >= 1.0.0-*",
-      "NETStandard.Library >= 1.6.0"
+      "NETStandard.Library >= 1.6.0",
+      "NUnit >= 3.4.1"
     ],
-    ".NETStandard,Version=v1.6": []
+    ".NETCoreApp,Version=v1.0": []
   },
   "tools": {},
   "projectFileToolGroups": {}

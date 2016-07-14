@@ -2,13 +2,14 @@
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
+using Monitorify.Core.HttpWrapper;
 
 namespace Monitorify.Core
 {
     internal class UrlListener : IUrlListener
     {
-        private readonly EndPoint _endPoint;
         private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
+        private readonly EndPoint _endPoint;
 
         public event Action<EndPoint> ListenerStarted;
         public event Action<EndPoint> ListenerEnded;
@@ -18,28 +19,27 @@ namespace Monitorify.Core
 
         public UrlListener(EndPoint endPoint)
         {
-            this._endPoint = endPoint;
+            _endPoint = endPoint;
         }
 
-        public async Task StartListening(TimeSpan delay)
+        public async Task StartListening(IHttpClient httpClient, TimeSpan delay)
         {
             ListenerStarted?.Invoke(_endPoint);
 
             while (!_cancellationTokenSource.IsCancellationRequested)
             {
-                await DoRequest();
+                await DoRequest(httpClient);
                 await Task.Delay(delay);
             }
             
             ListenerEnded?.Invoke(_endPoint);
         }
 
-        private async Task DoRequest()
+        private async Task DoRequest(IHttpClient httpClient)
         {
             try
             {
-                using (HttpClient client = new HttpClient())
-                using (HttpResponseMessage response = await client.GetAsync(_endPoint.Url))
+                using (HttpResponseMessage response = await httpClient.GetAsync(_endPoint.Url))
                 {
                     if (response.IsSuccessStatusCode)
                     {

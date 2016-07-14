@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Monitorify.Core.Configuration;
+using Monitorify.Core.HttpWrapper;
 
 namespace Monitorify.Core
 {
@@ -29,7 +30,13 @@ namespace Monitorify.Core
                 _listeners.Add(listener);
 
                 SubscribeForEvents(listener);
-                Task.Factory.StartNew(() => listener.StartListening(configuration.PingDelay));
+                Task.Factory.StartNew(() =>
+                {
+                    using (IHttpClient httpClient = new HttpClientWrapper())
+                    {
+                        listener.StartListening(httpClient, configuration.PingDelay);
+                    }
+                });
             }
         }
 

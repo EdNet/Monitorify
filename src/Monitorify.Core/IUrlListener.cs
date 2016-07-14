@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Monitorify.Core.HttpWrapper;
 
 namespace Monitorify.Core
 {
@@ -10,6 +11,6 @@ namespace Monitorify.Core
         event Action<EndPoint> ReportedOffline;
         event Action<EndPoint> ReportedOnline;
         event Action<Exception> ErrorOccured;
-        Task StartListening(TimeSpan delay);
+        Task StartListening(IHttpClient httpClient, TimeSpan delay);
     }
 }

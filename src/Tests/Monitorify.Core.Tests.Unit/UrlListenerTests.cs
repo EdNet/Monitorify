@@ -1,14 +1,13 @@
-﻿using NUnit.Framework;
+﻿using Xunit;
 
 namespace Monitorify.Core.Tests.Unit
 {
-    [TestFixture]
     public class UrlListenerTests
     {
-        [Test]
+        [Fact]
         public void PassingTest()
         {
-            Assert.IsTrue(4.Equals(4));
+            Assert.True(4.Equals(4));
         }
     }
 }

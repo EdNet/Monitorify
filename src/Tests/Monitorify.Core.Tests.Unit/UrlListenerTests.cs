@@ -82,5 +82,29 @@ namespace Monitorify.Core.Tests.Unit
             // Assert
             Assert.True(endpointIsOffline);
         }
+
+        [Fact]
+        public void StartListening_ExceptionIsThrown_ErrorEventIsRaised()
+        {
+            // Arrange
+            Mock<IHttpClient> httpMock = new Mock<IHttpClient>();
+
+            httpMock.Setup(x => x.GetAsync(It.IsAny<string>()))
+                .Throws<Exception>();
+
+            EndPoint endPoint = new EndPoint();
+            endPoint.Url = "http://www.google.com";
+            endPoint.Name = "Google";
+
+            bool errorIsRaised = false;
+            IUrlListener listener = new UrlListener(endPoint);
+            listener.ErrorOccured += point => errorIsRaised = true;
+
+            // Act
+            listener.StartListening(httpMock.Object, TimeSpan.FromSeconds(3));
+
+            // Assert
+            Assert.True(errorIsRaised);
+        }
     }
 }

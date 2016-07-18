@@ -97,14 +97,17 @@ namespace Monitorify.Core.Tests.Unit
             endPoint.Name = "Google";
 
             bool errorIsRaised = false;
+            bool listenerIsEndedRaised = false;
             IUrlListener listener = new UrlListener(endPoint);
             listener.ErrorOccured += point => errorIsRaised = true;
+            listener.ListenerEnded += point => listenerIsEndedRaised = true;
 
             // Act
-            listener.StartListening(httpMock.Object, TimeSpan.FromSeconds(3));
+            listener.StartListening(httpMock.Object, TimeSpan.FromSeconds(0));
 
             // Assert
             Assert.True(errorIsRaised);
+            Assert.True(listenerIsEndedRaised);
         }
     }
 }

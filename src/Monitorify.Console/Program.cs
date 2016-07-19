@@ -10,9 +10,6 @@ namespace Monitorify.Console
         {
             string filepath = Path.Combine(Directory.GetCurrentDirectory(), "config.json");
 
-            System.Console.WriteLine(filepath);
-            System.Console.ReadLine();
-
             IConfigurationReader provider = new JsonFileConfigurationReader();
             provider.SetSource(filepath);
             IConfiguration configuration = provider.Read();

@@ -10,6 +10,7 @@ namespace Monitorify.Core
     {
         private readonly IList<IUrlListener> _listeners;
         private Func<IUrlListener> _urlListenerFactory;
+        private Func<IHttpClient> _httpClientFactory;
 
         public event Action<EndPoint> ListenerStarted;
         public event Action<EndPoint> ListenerEnded;
@@ -32,7 +33,7 @@ namespace Monitorify.Core
                 SubscribeForEvents(listener);
                 Task.Factory.StartNew(() =>
                 {
-                    using (IHttpClient httpClient = new HttpClientWrapper())
+                    using (IHttpClient httpClient = HttpClientFactory.Invoke())
                     {
                         listener.HttpClient = httpClient;
                         listener.StartListening(endPoint, configuration.PingDelay);
@@ -45,6 +46,12 @@ namespace Monitorify.Core
         {
             get { return _urlListenerFactory ?? (_urlListenerFactory = () => new UrlListener()); }
             set { _urlListenerFactory = value; }
+        }
+
+        internal Func<IHttpClient> HttpClientFactory
+        {
+            get { return _httpClientFactory ?? (_httpClientFactory = () => new HttpClientWrapper()); }
+            set { _httpClientFactory = value; }
         }
 
         private void SubscribeForEvents(IUrlListener listener)

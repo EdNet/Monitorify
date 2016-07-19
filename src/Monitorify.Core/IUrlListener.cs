@@ -11,6 +11,8 @@ namespace Monitorify.Core
         event Action<EndPoint> ReportedOffline;
         event Action<EndPoint> ReportedOnline;
         event Action<Exception> ErrorOccured;
-        Task StartListening(IHttpClient httpClient, TimeSpan delay);
+
+        IHttpClient HttpClient { get; set; }
+        Task StartListening(EndPoint endPoint, TimeSpan delay);
     }
 }

@@ -24,10 +24,11 @@ namespace Monitorify.Core.Tests.Unit
             endPoint.Url = "http://www.google.com";
             endPoint.Name = "Google";
 
-            IUrlListener listener = new UrlListener(endPoint);
+            IUrlListener listener = new UrlListener();
 
             // Act
-            listener.StartListening(httpMock.Object, TimeSpan.FromSeconds(3));
+            listener.HttpClient = httpMock.Object;
+            listener.StartListening(endPoint, TimeSpan.FromSeconds(3));
 
             // Assert
             httpMock.Verify(x => x.GetAsync(endPoint.Url), Times.AtLeastOnce);
@@ -48,11 +49,12 @@ namespace Monitorify.Core.Tests.Unit
             endPoint.Name = "Google";
 
             bool endpointIsOnline = false;
-            IUrlListener listener = new UrlListener(endPoint);
+            IUrlListener listener = new UrlListener();
+            listener.HttpClient = httpMock.Object;
             listener.ReportedOnline += point => endpointIsOnline = true;
 
             // Act
-            listener.StartListening(httpMock.Object, TimeSpan.FromSeconds(3));
+            listener.StartListening(endPoint, TimeSpan.FromSeconds(3));
 
             // Assert
             Assert.True(endpointIsOnline);
@@ -73,11 +75,12 @@ namespace Monitorify.Core.Tests.Unit
             endPoint.Name = "Google";
 
             bool endpointIsOffline = false;
-            IUrlListener listener = new UrlListener(endPoint);
+            IUrlListener listener = new UrlListener();
+            listener.HttpClient = httpMock.Object;
             listener.ReportedOffline += point => endpointIsOffline = true;
 
             // Act
-            listener.StartListening(httpMock.Object, TimeSpan.FromSeconds(3));
+            listener.StartListening(endPoint, TimeSpan.FromSeconds(3));
 
             // Assert
             Assert.True(endpointIsOffline);
@@ -98,12 +101,13 @@ namespace Monitorify.Core.Tests.Unit
 
             bool errorIsRaised = false;
             bool listenerIsEndedRaised = false;
-            IUrlListener listener = new UrlListener(endPoint);
+            IUrlListener listener = new UrlListener();
             listener.ErrorOccured += point => errorIsRaised = true;
             listener.ListenerEnded += point => listenerIsEndedRaised = true;
 
             // Act
-            listener.StartListening(httpMock.Object, TimeSpan.FromSeconds(0));
+            listener.HttpClient = httpMock.Object;
+            listener.StartListening(endPoint, TimeSpan.FromSeconds(0));
 
             // Assert
             Assert.True(errorIsRaised);

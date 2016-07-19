@@ -9,7 +9,7 @@ namespace Monitorify.Core
     internal class UrlListener : IUrlListener
     {
         private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
-        private readonly EndPoint _endPoint;
+        private IHttpClient _httpClient;
 
         public event Action<EndPoint> ListenerStarted;
         public event Action<EndPoint> ListenerEnded;
@@ -17,37 +17,38 @@ namespace Monitorify.Core
         public event Action<EndPoint> ReportedOnline;
         public event Action<Exception> ErrorOccured;
 
-        public UrlListener(EndPoint endPoint)
+        public IHttpClient HttpClient
         {
-            _endPoint = endPoint;
+            get { return _httpClient ?? (_httpClient = new HttpClientWrapper()); }
+            set { _httpClient = value; }
         }
 
-        public async Task StartListening(IHttpClient httpClient, TimeSpan delay)
+        public async Task StartListening(EndPoint endPoint, TimeSpan delay)
         {
-            ListenerStarted?.Invoke(_endPoint);
+            ListenerStarted?.Invoke(endPoint);
 
             while (!_cancellationTokenSource.IsCancellationRequested)
             {
-                await DoRequest(httpClient);
+                await DoRequest(endPoint);
                 await Task.Delay(delay);
             }
-            
-            ListenerEnded?.Invoke(_endPoint);
+
+            ListenerEnded?.Invoke(endPoint);
         }
 
-        private async Task DoRequest(IHttpClient httpClient)
+        private async Task DoRequest(EndPoint endPoint)
         {
             try
             {
-                using (HttpResponseMessage response = await httpClient.GetAsync(_endPoint.Url))
+                using (HttpResponseMessage response = await _httpClient.GetAsync(endPoint.Url))
                 {
                     if (response.IsSuccessStatusCode)
                     {
-                        ReportedOnline?.Invoke(_endPoint);
+                        ReportedOnline?.Invoke(endPoint);
                     }
                     else
                     {
-                        ReportedOffline?.Invoke(_endPoint);
+                        ReportedOffline?.Invoke(endPoint);
                     }
                 }
 

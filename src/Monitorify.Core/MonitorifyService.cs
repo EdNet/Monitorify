@@ -68,14 +68,18 @@ namespace Monitorify.Core
             {
                 listener.ListenerEnded += endpoint => ListenerEnded(endpoint);
             }
-            if (ReportedOnline != null)
+
+            listener.ReportedOnline += endpoint =>
             {
-                listener.ReportedOnline += endpoint => ReportedOnline(endpoint);
-            }
-            if (ReportedOffline != null)
+                endpoint.LastOnline = DateTime.UtcNow;
+                ReportedOnline?.Invoke(endpoint);
+            };
+
+            listener.ReportedOffline += endpoint =>
             {
-                listener.ReportedOffline += endpoint => ReportedOffline(endpoint);
-            }
+                endpoint.LastOffline = DateTime.UtcNow;
+                ReportedOffline?.Invoke(endpoint);
+            };
         }
     }
 }

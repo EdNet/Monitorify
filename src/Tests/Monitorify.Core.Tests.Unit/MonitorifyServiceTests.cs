@@ -30,5 +30,27 @@ namespace Monitorify.Core.Tests.Unit
             // Assert
             urlListenerMock.Verify(x => x.StartListening(endpoint, delay));
         }
+
+        [Fact]
+        public void Start_EndpointIsOnline_OnlineTimeIsRecorded()
+        {
+            // Arrange
+            Mock<IConfiguration> configurationMock = new Mock<IConfiguration>();
+            var endpoint = new EndPoint { Name = "Test", Url = "http://test.test" };
+            var delay = TimeSpan.Zero;
+            configurationMock.Setup(x => x.EndPoints).Returns(new List<EndPoint> { endpoint });
+            configurationMock.Setup(x => x.PingDelay).Returns(delay);
+            MonitorifyService monitorifyService = new MonitorifyService();
+
+            Mock<IUrlListener> urlListenerMock = new Mock<IUrlListener>();
+            monitorifyService.UrlListenerFactory = () => urlListenerMock.Object;
+
+            // Act
+            monitorifyService.Start(configurationMock.Object);
+            urlListenerMock.Raise(m => m.ReportedOnline += point => { }, endpoint);
+
+            // Assert
+            Assert.True(endpoint.LastOnline != null);
+        }
     }
 }

@@ -4,9 +4,9 @@
     {
         public EmailNotificationPublisherConfig(string smtp)
         {
-            Smtp = smtp;
+            SMTP = smtp;
         }
 
-        public string Smtp { get; }
+        public string SMTP { get; }
     }
 }

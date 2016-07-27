@@ -71,13 +71,13 @@ namespace Monitorify.Core
 
             listener.ReportedOnline += endpoint =>
             {
-                endpoint.LastOnline = DateTime.UtcNow;
+                endpoint.RecordOnline();
                 ReportedOnline?.Invoke(endpoint);
             };
 
             listener.ReportedOffline += endpoint =>
             {
-                endpoint.LastOffline = DateTime.UtcNow;
+                endpoint.RecordOffline();
                 ReportedOffline?.Invoke(endpoint);
             };
         }

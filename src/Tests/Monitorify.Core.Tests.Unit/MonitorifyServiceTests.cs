@@ -51,6 +51,30 @@ namespace Monitorify.Core.Tests.Unit
 
             // Assert
             Assert.True(endpoint.LastOnline != null);
+            Assert.True(endpoint.Status == EndpointStatus.Online);
+        }
+
+        [Fact]
+        public void Start_EndpointIsOffline_OfflineTimeIsRecorded()
+        {
+            // Arrange
+            Mock<IConfiguration> configurationMock = new Mock<IConfiguration>();
+            var endpoint = new EndPoint { Name = "Test", Url = "http://test.test" };
+            var delay = TimeSpan.Zero;
+            configurationMock.Setup(x => x.EndPoints).Returns(new List<EndPoint> { endpoint });
+            configurationMock.Setup(x => x.PingDelay).Returns(delay);
+            MonitorifyService monitorifyService = new MonitorifyService();
+
+            Mock<IUrlListener> urlListenerMock = new Mock<IUrlListener>();
+            monitorifyService.UrlListenerFactory = () => urlListenerMock.Object;
+
+            // Act
+            monitorifyService.Start(configurationMock.Object);
+            urlListenerMock.Raise(m => m.ReportedOffline += point => { }, endpoint);
+
+            // Assert
+            Assert.True(endpoint.LastOffline != null);
+            Assert.True(endpoint.Status == EndpointStatus.Offline);
         }
     }
 }

@@ -7,9 +7,11 @@ namespace Monitorify.Core
     {
         event Action<EndPoint> ListenerStarted;
         event Action<EndPoint> ListenerEnded;
-        event Action<EndPoint> ReportedOffline;
-        event Action<EndPoint> ReportedOnline;
+        event Action<EndPoint> Offline;
+        event Action<EndPoint> Online;
         event Action<Exception> ErrorOccured;
+        event Action<EndPoint> WentOffline;
+        event Action<EndPoint> BackOnline;
 
         void Start(IConfiguration configuration);
     }

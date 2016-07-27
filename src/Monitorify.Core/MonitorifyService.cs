@@ -14,9 +14,11 @@ namespace Monitorify.Core
 
         public event Action<EndPoint> ListenerStarted;
         public event Action<EndPoint> ListenerEnded;
-        public event Action<EndPoint> ReportedOffline;
-        public event Action<EndPoint> ReportedOnline;
+        public event Action<EndPoint> Offline;
+        public event Action<EndPoint> Online;
         public event Action<Exception> ErrorOccured;
+        public event Action<EndPoint> WentOffline;
+        public event Action<EndPoint> BackOnline;
 
         public MonitorifyService()
         {
@@ -71,14 +73,31 @@ namespace Monitorify.Core
 
             listener.ReportedOnline += endpoint =>
             {
-                endpoint.RecordOnline();
-                ReportedOnline?.Invoke(endpoint);
+                if (endpoint.Status == EndpointStatus.Offline)
+                {
+                    endpoint.RecordOutageTime();
+                    endpoint.RecordOnline();
+                    BackOnline?.Invoke(endpoint);
+                }
+                else
+                {
+                    endpoint.RecordOnline();
+                }
+
+                Online?.Invoke(endpoint);
             };
 
             listener.ReportedOffline += endpoint =>
             {
+                var prevStatus = endpoint.Status;
                 endpoint.RecordOffline();
-                ReportedOffline?.Invoke(endpoint);
+
+                if (prevStatus == EndpointStatus.Online)
+                {
+                    WentOffline?.Invoke(endpoint);
+                }
+                
+                Offline?.Invoke(endpoint);
             };
         }
     }

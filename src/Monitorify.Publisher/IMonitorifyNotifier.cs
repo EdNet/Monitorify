@@ -1,9 +1,11 @@
 ﻿using System.Threading.Tasks;
+using Monitorify.Core.Configuration;
 
 namespace Monitorify.Publisher
 {
     public interface IMonitorifyNotifier
     {
-        Task ListenAndNotify();
+        void AddPublisher(INotificationPublisher publisher);
+        Task ListenAndNotify(IConfiguration configuration);
     }
 }

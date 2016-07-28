@@ -4,6 +4,7 @@ namespace Monitorify.Publisher
 {
     public interface INotificationPublisher
     {
-        Task Notify();
+        Task NotifyOffline(Core.EndPoint endPoint);
+        Task NotifyBackOnline(Core.EndPoint endPoint);
     }
 }

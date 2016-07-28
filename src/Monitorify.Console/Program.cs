@@ -25,7 +25,7 @@ namespace Monitorify.Console
             service.WentOffline += endpoint => System.Console.WriteLine($"Url {endpoint.Name} {endpoint.Url} went offline!");
             service.BackOnline += endpoint => System.Console.WriteLine($"Url {endpoint.Name} {endpoint.Url} is back online, outage time span - {endpoint.LastOutageTimeSpan.Value.ToString(@"d\.hh\:mm\:ss")}");
 
-            service.Start(configuration);
+            service.Start(configuration).Wait();
 
             System.Console.ReadLine();
         }

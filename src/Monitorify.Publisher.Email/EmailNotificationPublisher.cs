@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Monitorify.Core;
 
 namespace Monitorify.Publisher.Email
 {
@@ -12,23 +13,29 @@ namespace Monitorify.Publisher.Email
             _publisherConfig = publisherConfig;
         }
 
-        public Task Notify()
+        /*            using (var client = new SmtpClient())
+            {
+                client.Connect("smtp.friends.com", 587, false);
+
+                // Note: since we don't have an OAuth2 token, disable
+                // the XOAUTH2 authentication mechanism.
+                client.AuthenticationMechanisms.Remove("XOAUTH2");
+
+                // Note: only needed if the SMTP server requires authentication
+                client.Authenticate("joey", "password");
+
+                client.Send(message);
+                client.Disconnect(true);
+            }*/
+
+        public Task NotifyOffline(EndPoint endPoint)
         {
             throw new NotImplementedException();
-            /*            using (var client = new SmtpClient())
-                        {
-                            client.Connect("smtp.friends.com", 587, false);
+        }
 
-                            // Note: since we don't have an OAuth2 token, disable
-                            // the XOAUTH2 authentication mechanism.
-                            client.AuthenticationMechanisms.Remove("XOAUTH2");
-
-                            // Note: only needed if the SMTP server requires authentication
-                            client.Authenticate("joey", "password");
-
-                            client.Send(message);
-                            client.Disconnect(true);
-                        }*/
+        public Task NotifyBackOnline(EndPoint endPoint)
+        {
+            throw new NotImplementedException();
         }
     }
 }

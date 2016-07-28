@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Monitorify.Core.Configuration;
 
 namespace Monitorify.Core
@@ -13,6 +14,6 @@ namespace Monitorify.Core
         event Action<EndPoint> WentOffline;
         event Action<EndPoint> BackOnline;
 
-        void Start(IConfiguration configuration);
+        Task Start(IConfiguration configuration);
     }
 }

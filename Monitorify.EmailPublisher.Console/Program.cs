@@ -21,7 +21,6 @@ namespace Monitorify.EmailPublisher.Console
 
             IMonitorifyNotifier notifier = new MonitorifyNotifier();
             notifier.AddEmailPublisher(emailConfig);
-            notifier.ErrorOccured += exception => { System.Console.WriteLine($"Error occured!!! {exception.Message}"); };
             notifier.ListenAndNotify(configuration).Wait();
 
             System.Console.ReadLine();

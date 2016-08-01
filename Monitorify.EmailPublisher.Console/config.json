@@ -1,8 +1,8 @@
 ﻿{
   "endpoints": [
     {
-      "name": "test",
-      "url": "https://uk-customermanagement-qa9.bapps.je-labs.com.localhost"
+      "name": "api",
+      "url": "http://local.api.mtaxi.ee/api/heartbeat"
     }
   ],
   "pingDelay": "00:00:05"

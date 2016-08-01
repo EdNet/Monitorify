@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Monitorify.Console", "src\Monitorify.Console\Monitorify.Console.xproj", "{19F94F62-DADB-4A7C-BE14-3862821D1E40}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Monitorify.Core.Console", "src\Monitorify.Console\Monitorify.Core.Console.xproj", "{19F94F62-DADB-4A7C-BE14-3862821D1E40}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Monitorify.Core", "src\Monitorify.Core\Monitorify.Core.xproj", "{725BAD53-26DA-4654-9E0D-E68C3F0B3438}"
 EndProject
@@ -25,6 +25,10 @@ EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Monitorify.Publisher.Email", "src\Monitorify.Publisher.Email\Monitorify.Publisher.Email.xproj", "{516F69AF-DBAE-4717-B6FD-32BF92CD6443}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Monitorify.Publisher.Email.Tests.Integration", "src\Tests\Monitorify.Publisher.Email.Tests.Integration\Monitorify.Publisher.Email.Tests.Integration.xproj", "{13DD1627-8F13-405A-B904-FC279FCE95A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{ECD6B6DB-BA3D-44D3-AB19-20817C27939C}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Monitorify.EmailPublisher.Console", "Monitorify.EmailPublisher.Console\Monitorify.EmailPublisher.Console.xproj", "{E413AC61-0F75-434D-A32C-C1476699A8B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,12 +64,16 @@ Global
 		{13DD1627-8F13-405A-B904-FC279FCE95A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13DD1627-8F13-405A-B904-FC279FCE95A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13DD1627-8F13-405A-B904-FC279FCE95A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E413AC61-0F75-434D-A32C-C1476699A8B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E413AC61-0F75-434D-A32C-C1476699A8B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E413AC61-0F75-434D-A32C-C1476699A8B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E413AC61-0F75-434D-A32C-C1476699A8B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{19F94F62-DADB-4A7C-BE14-3862821D1E40} = {FC1A1009-2B3F-47E4-B152-4E9DAF4E2949}
+		{19F94F62-DADB-4A7C-BE14-3862821D1E40} = {ECD6B6DB-BA3D-44D3-AB19-20817C27939C}
 		{725BAD53-26DA-4654-9E0D-E68C3F0B3438} = {FC1A1009-2B3F-47E4-B152-4E9DAF4E2949}
 		{0CEE72C2-4538-4569-8D48-F2FD1B77F386} = {FC1A1009-2B3F-47E4-B152-4E9DAF4E2949}
 		{A9647B3F-C278-4174-BF98-193ACD030716} = {0CEE72C2-4538-4569-8D48-F2FD1B77F386}
@@ -73,5 +81,7 @@ Global
 		{4582DCFD-1563-45F5-8C55-7FCAC1A12B2A} = {0CEE72C2-4538-4569-8D48-F2FD1B77F386}
 		{516F69AF-DBAE-4717-B6FD-32BF92CD6443} = {FC1A1009-2B3F-47E4-B152-4E9DAF4E2949}
 		{13DD1627-8F13-405A-B904-FC279FCE95A6} = {0CEE72C2-4538-4569-8D48-F2FD1B77F386}
+		{ECD6B6DB-BA3D-44D3-AB19-20817C27939C} = {FC1A1009-2B3F-47E4-B152-4E9DAF4E2949}
+		{E413AC61-0F75-434D-A32C-C1476699A8B2} = {ECD6B6DB-BA3D-44D3-AB19-20817C27939C}
 	EndGlobalSection
 EndGlobal

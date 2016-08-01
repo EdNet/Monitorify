@@ -1,5 +1,6 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using MailKit.Net.Smtp;
+using MimeKit;
 using Monitorify.Core;
 
 namespace Monitorify.Publisher.Email
@@ -13,29 +14,47 @@ namespace Monitorify.Publisher.Email
             _publisherConfig = publisherConfig;
         }
 
-        /*            using (var client = new SmtpClient())
+        public Task NotifyOffline(EndPoint endPoint)
+        {
+            return SendMessage("Endpoint went offline!", 
+                $"Endpoint {endPoint.Url} is currently offline");
+        }
+        
+        public Task NotifyBackOnline(EndPoint endPoint)
+        {
+            return SendMessage("Endpoint is back online!",
+                $"Endpoint {endPoint.Url} is back online. Outage time span is {endPoint.LastOutageTimeSpan.Value.ToString(@"d\.hh\:mm\:ss")}");
+        }
+
+        private Task SendMessage(string subject, string body)
+        {
+            var message = new MimeMessage();
+            message.From.Add(new MailboxAddress("", _publisherConfig.FromEmail));
+            message.To.Add(new MailboxAddress("", _publisherConfig.ToEmail));
+            message.Subject = subject;
+
+            message.Body = new TextPart("plain")
             {
-                client.Connect("smtp.friends.com", 587, false);
+                Text = body
+            };
+
+            using (var client = new SmtpClient())
+            {
+                client.Connect(_publisherConfig.SmtpServer, _publisherConfig.SmtpPort, _publisherConfig.UseSsl);
 
                 // Note: since we don't have an OAuth2 token, disable
                 // the XOAUTH2 authentication mechanism.
                 client.AuthenticationMechanisms.Remove("XOAUTH2");
 
                 // Note: only needed if the SMTP server requires authentication
-                client.Authenticate("joey", "password");
+                client.Authenticate(_publisherConfig.UserName, _publisherConfig.Password);
 
-                client.Send(message);
-                client.Disconnect(true);
-            }*/
+                return client.SendAsync(message).ContinueWith(task =>
+                {
+                    client.DisconnectAsync(true);
+                });
 
-        public Task NotifyOffline(EndPoint endPoint)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task NotifyBackOnline(EndPoint endPoint)
-        {
-            throw new NotImplementedException();
+            }
         }
     }
 }

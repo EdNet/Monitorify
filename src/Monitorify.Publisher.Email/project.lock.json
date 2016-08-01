@@ -3,6 +3,40 @@
   "version": 2,
   "targets": {
     ".NETStandard,Version=v1.6": {
+      "MailKit/1.4.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.0.1",
+          "MimeKit": "1.4.1",
+          "Portable.BouncyCastle": "1.8.1.1",
+          "System.Collections": "4.0.11",
+          "System.Data.Common": "4.1.0",
+          "System.IO.Compression": "4.1.0",
+          "System.Linq": "4.1.0",
+          "System.Net.NameResolution": "4.0.0",
+          "System.Net.NetworkInformation": "4.1.0",
+          "System.Net.Primitives": "4.0.11",
+          "System.Net.Security": "4.0.0",
+          "System.Net.Sockets": "4.1.0",
+          "System.Reflection": "4.1.0",
+          "System.Reflection.TypeExtensions": "4.1.0",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.InteropServices": "4.1.0",
+          "System.Runtime.Serialization.Primitives": "4.1.1",
+          "System.Security.Cryptography.Algorithms": "4.2.0",
+          "System.Security.Cryptography.Primitives": "4.0.0",
+          "System.Text.Encoding": "4.0.11",
+          "System.Text.Encoding.CodePages": "4.0.1",
+          "System.Text.Encoding.Extensions": "4.0.11",
+          "System.Threading": "4.0.11"
+        },
+        "compile": {
+          "lib/netstandard1.3/MailKit.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/MailKit.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.1": {
         "type": "package",
         "dependencies": {
@@ -57,6 +91,36 @@
         },
         "compile": {
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "MimeKit/1.4.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.0.1",
+          "Portable.BouncyCastle": "1.8.1.1",
+          "System.Collections": "4.0.11",
+          "System.Data.Common": "4.1.0",
+          "System.Linq": "4.1.0",
+          "System.Net.NameResolution": "4.0.0",
+          "System.Net.NetworkInformation": "4.1.0",
+          "System.Net.Primitives": "4.0.11",
+          "System.Reflection": "4.1.0",
+          "System.Reflection.TypeExtensions": "4.1.0",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.InteropServices": "4.1.0",
+          "System.Runtime.Serialization.Primitives": "4.1.1",
+          "System.Security.Cryptography.Algorithms": "4.2.0",
+          "System.Security.Cryptography.Primitives": "4.0.0",
+          "System.Text.Encoding": "4.0.11",
+          "System.Text.Encoding.CodePages": "4.0.1",
+          "System.Text.Encoding.Extensions": "4.0.11",
+          "System.Threading": "4.0.11"
+        },
+        "compile": {
+          "lib/netstandard1.3/MimeKit.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/MimeKit.dll": {}
         }
       },
       "NETStandard.Library/1.6.0": {
@@ -141,6 +205,31 @@
           "lib/netstandard1.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Portable.BouncyCastle/1.8.1.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.0.11",
+          "System.Diagnostics.Debug": "4.0.11",
+          "System.Globalization": "4.0.11",
+          "System.IO": "4.1.0",
+          "System.IO.FileSystem": "4.0.1",
+          "System.IO.FileSystem.Primitives": "4.0.1",
+          "System.Linq": "4.1.0",
+          "System.Reflection": "4.1.0",
+          "System.Reflection.Extensions": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Text.Encoding": "4.0.11",
+          "System.Threading": "4.0.11",
+          "System.Threading.Tasks": "4.0.11"
+        },
+        "compile": {
+          "lib/netstandard1.3/crypto.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/crypto.dll": {}
+        }
+      },
       "runtime.native.System/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -168,6 +257,19 @@
         }
       },
       "runtime.native.System.Net.Http/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.NETCore.Targets": "1.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        }
+      },
+      "runtime.native.System.Net.Security/4.0.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.0.1",
@@ -264,6 +366,25 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Console.dll": {}
+        }
+      },
+      "System.Data.Common/4.1.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.0.11",
+          "System.Globalization": "4.0.11",
+          "System.IO": "4.1.0",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Text.RegularExpressions": "4.1.0",
+          "System.Threading.Tasks": "4.0.11"
+        },
+        "compile": {
+          "ref/netstandard1.2/System.Data.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.2/System.Data.Common.dll": {}
         }
       },
       "System.Diagnostics.Debug/4.0.11": {
@@ -569,6 +690,83 @@
           }
         }
       },
+      "System.Net.NameResolution/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "System.Collections": "4.0.11",
+          "System.Diagnostics.Tracing": "4.1.0",
+          "System.Globalization": "4.0.11",
+          "System.Net.Primitives": "4.0.11",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Runtime.Handles": "4.0.1",
+          "System.Runtime.InteropServices": "4.1.0",
+          "System.Security.Principal.Windows": "4.0.0",
+          "System.Threading": "4.0.11",
+          "System.Threading.Tasks": "4.0.11",
+          "runtime.native.System": "4.0.0"
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Net.NameResolution.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netstandard1.3/System.Net.NameResolution.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/netstandard1.3/System.Net.NameResolution.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Net.NetworkInformation/4.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.Win32.Primitives": "4.0.1",
+          "System.Collections": "4.0.11",
+          "System.Diagnostics.Tracing": "4.1.0",
+          "System.Globalization": "4.0.11",
+          "System.IO": "4.1.0",
+          "System.IO.FileSystem": "4.0.1",
+          "System.IO.FileSystem.Primitives": "4.0.1",
+          "System.Linq": "4.1.0",
+          "System.Net.Primitives": "4.0.11",
+          "System.Net.Sockets": "4.1.0",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Runtime.Handles": "4.0.1",
+          "System.Runtime.InteropServices": "4.1.0",
+          "System.Security.Principal.Windows": "4.0.0",
+          "System.Threading": "4.0.11",
+          "System.Threading.Overlapped": "4.0.1",
+          "System.Threading.Tasks": "4.0.11",
+          "System.Threading.Thread": "4.0.0",
+          "System.Threading.ThreadPool": "4.0.10",
+          "runtime.native.System": "4.0.0"
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Net.NetworkInformation.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux/lib/netstandard1.3/System.Net.NetworkInformation.dll": {
+            "assetType": "runtime",
+            "rid": "linux"
+          },
+          "runtimes/osx/lib/netstandard1.3/System.Net.NetworkInformation.dll": {
+            "assetType": "runtime",
+            "rid": "osx"
+          },
+          "runtimes/win/lib/netstandard1.3/System.Net.NetworkInformation.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
       "System.Net.Primitives/4.0.11": {
         "type": "package",
         "dependencies": {
@@ -579,6 +777,52 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Net.Primitives.dll": {}
+        }
+      },
+      "System.Net.Security/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.Win32.Primitives": "4.0.1",
+          "System.Collections": "4.0.11",
+          "System.Collections.Concurrent": "4.0.12",
+          "System.Diagnostics.Tracing": "4.1.0",
+          "System.Globalization": "4.0.11",
+          "System.Globalization.Extensions": "4.0.1",
+          "System.IO": "4.1.0",
+          "System.Net.Primitives": "4.0.11",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Runtime.Handles": "4.0.1",
+          "System.Runtime.InteropServices": "4.1.0",
+          "System.Security.Claims": "4.0.1",
+          "System.Security.Cryptography.Algorithms": "4.2.0",
+          "System.Security.Cryptography.Encoding": "4.0.0",
+          "System.Security.Cryptography.OpenSsl": "4.0.0",
+          "System.Security.Cryptography.Primitives": "4.0.0",
+          "System.Security.Cryptography.X509Certificates": "4.1.0",
+          "System.Security.Principal": "4.0.1",
+          "System.Text.Encoding": "4.0.11",
+          "System.Threading": "4.0.11",
+          "System.Threading.Tasks": "4.0.11",
+          "System.Threading.ThreadPool": "4.0.10",
+          "runtime.native.System": "4.0.0",
+          "runtime.native.System.Net.Security": "4.0.1",
+          "runtime.native.System.Security.Cryptography": "4.0.0"
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Net.Security.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netstandard1.6/System.Net.Security.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/netstandard1.3/System.Net.Security.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
         }
       },
       "System.Net.Sockets/4.1.0": {
@@ -699,7 +943,7 @@
           "System.Runtime": "4.1.0"
         },
         "compile": {
-          "ref/netstandard1.5/_._": {}
+          "ref/netstandard1.5/System.Reflection.TypeExtensions.dll": {}
         },
         "runtime": {
           "lib/netstandard1.5/System.Reflection.TypeExtensions.dll": {}
@@ -815,6 +1059,24 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Runtime.Serialization.Primitives.dll": {}
+        }
+      },
+      "System.Security.Claims/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.0.11",
+          "System.Globalization": "4.0.11",
+          "System.IO": "4.1.0",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Security.Principal": "4.0.1"
+        },
+        "compile": {
+          "ref/netstandard1.3/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Security.Claims.dll": {}
         }
       },
       "System.Security.Cryptography.Algorithms/4.2.0": {
@@ -1029,6 +1291,50 @@
           }
         }
       },
+      "System.Security.Principal/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime": "4.1.0"
+        },
+        "compile": {
+          "ref/netstandard1.0/System.Security.Principal.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.Security.Principal.dll": {}
+        }
+      },
+      "System.Security.Principal.Windows/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "Microsoft.Win32.Primitives": "4.0.1",
+          "System.Collections": "4.0.11",
+          "System.Diagnostics.Debug": "4.0.11",
+          "System.Reflection": "4.1.0",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Runtime.Handles": "4.0.1",
+          "System.Runtime.InteropServices": "4.1.0",
+          "System.Security.Claims": "4.0.1",
+          "System.Security.Principal": "4.0.1",
+          "System.Text.Encoding": "4.0.11",
+          "System.Threading": "4.0.11"
+        },
+        "compile": {
+          "ref/netstandard1.3/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netstandard1.3/System.Security.Principal.Windows.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/netstandard1.3/System.Security.Principal.Windows.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
       "System.Text.Encoding/4.0.11": {
         "type": "package",
         "dependencies": {
@@ -1038,6 +1344,36 @@
         },
         "compile": {
           "ref/netstandard1.3/System.Text.Encoding.dll": {}
+        }
+      },
+      "System.Text.Encoding.CodePages/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "System.Collections": "4.0.11",
+          "System.Globalization": "4.0.11",
+          "System.IO": "4.1.0",
+          "System.Reflection": "4.1.0",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Runtime.Handles": "4.0.1",
+          "System.Runtime.InteropServices": "4.1.0",
+          "System.Text.Encoding": "4.0.11",
+          "System.Threading": "4.0.11"
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Text.Encoding.CodePages.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netstandard1.3/System.Text.Encoding.CodePages.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/netstandard1.3/System.Text.Encoding.CodePages.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
         }
       },
       "System.Text.Encoding.Extensions/4.0.11": {
@@ -1082,6 +1418,28 @@
           "lib/netstandard1.3/System.Threading.dll": {}
         }
       },
+      "System.Threading.Overlapped/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Handles": "4.0.1"
+        },
+        "compile": {
+          "ref/netstandard1.3/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netstandard1.3/System.Threading.Overlapped.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/netstandard1.3/System.Threading.Overlapped.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
       "System.Threading.Tasks/4.0.11": {
         "type": "package",
         "dependencies": {
@@ -1105,6 +1463,31 @@
         },
         "runtime": {
           "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll": {}
+        }
+      },
+      "System.Threading.Thread/4.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime": "4.1.0"
+        },
+        "compile": {
+          "ref/netstandard1.3/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Threading.Thread.dll": {}
+        }
+      },
+      "System.Threading.ThreadPool/4.0.10": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Handles": "4.0.1"
+        },
+        "compile": {
+          "ref/netstandard1.3/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Threading.ThreadPool.dll": {}
         }
       },
       "System.Threading.Timer/4.0.1": {
@@ -1199,8 +1582,33 @@
     }
   },
   "libraries": {
+    "MailKit/1.4.1": {
+      "sha512": "RZ0u1ffONZ/SXnJJK/TsbKXXSSh4GFaJ1fWgIyMp2TFDFk7Q6kKaPx54/wHDLmYcQe39Z2Z80TxbnyyfzSftFg==",
+      "type": "package",
+      "path": "MailKit/1.4.1",
+      "files": [
+        "MailKit.1.4.1.nupkg.sha512",
+        "MailKit.nuspec",
+        "lib/MonoAndroid10/MailKit.dll",
+        "lib/MonoAndroid10/MailKit.xml",
+        "lib/Xamarin.iOS10/MailKit.dll",
+        "lib/Xamarin.iOS10/MailKit.xml",
+        "lib/net40/MailKit.dll",
+        "lib/net40/MailKit.xml",
+        "lib/net45/MailKit.dll",
+        "lib/net45/MailKit.xml",
+        "lib/net451/MailKit.dll",
+        "lib/net451/MailKit.xml",
+        "lib/netstandard1.3/MailKit.dll",
+        "lib/netstandard1.3/MailKit.xml",
+        "lib/win81/MailKit.dll",
+        "lib/win81/MailKit.xml",
+        "lib/wpa81/MailKit.dll",
+        "lib/wpa81/MailKit.xml"
+      ]
+    },
     "Microsoft.CSharp/4.0.1": {
-      "sha512": "17h8b5mXa87XYKrrVqdgZ38JefSUqLChUQpXgSnpzsM0nDOhE40FTeNWOJ/YmySGV6tG6T8+hjz6vxbknHJr6A==",
+      "sha512": "Anso3cu91gFtB+jF1WobCSLdpGso5JWs4ohtoFfIyhFdeCOj7mSUt2EsT5ZH5fy7l0e9FIIqqcWOnmh04mfhjA==",
       "type": "package",
       "path": "Microsoft.CSharp/4.0.1",
       "files": [
@@ -1257,7 +1665,7 @@
       ]
     },
     "Microsoft.NETCore.Platforms/1.0.1": {
-      "sha512": "2G6OjjJzwBfNOO8myRV/nFrbTw5iA+DEm0N+qUqhrOmaVtn4pC77h38I1jsXGw5VH55+dPfQsqHD0We9sCl9FQ==",
+      "sha512": "4VgFMfAulSAw/8DXQgX9+2oo6/qqjXO62FktYzejHXVhtjV6Yye8LmBf12RRS7/XDM2S+nED195ZRjxZYabvsw==",
       "type": "package",
       "path": "Microsoft.NETCore.Platforms/1.0.1",
       "files": [
@@ -1270,7 +1678,7 @@
       ]
     },
     "Microsoft.NETCore.Targets/1.0.1": {
-      "sha512": "rkn+fKobF/cbWfnnfBOQHKVKIOpxMZBvlSHkqDWgBpwGDcLRduvs3D9OLGeV6GWGvVwNlVi2CBbTjuPmtHvyNw==",
+      "sha512": "/uDMnZbpv1zf+ja7FbYvFEWykViY6xxdTSuP/6e3BwsrIMjDSOMlRLk8EJnSSfn+t6K2+JI0gJ7bfFmU1ZDGLQ==",
       "type": "package",
       "path": "Microsoft.NETCore.Targets/1.0.1",
       "files": [
@@ -1283,7 +1691,7 @@
       ]
     },
     "Microsoft.Win32.Primitives/4.0.1": {
-      "sha512": "fQnBHO9DgcmkC9dYSJoBqo6sH1VJwJprUHh8F3hbcRlxiQiBUuTntdk8tUwV490OqC2kQUrinGwZyQHTieuXRA==",
+      "sha512": "onuBN4k4rtbadsQFXf6dnaB6SuN+WweSMPyRr6RSUhhqp6+DFTfHhoZWbgoqLOCdric93aIlRGqoC3UkvSOn1w==",
       "type": "package",
       "path": "Microsoft.Win32.Primitives/4.0.1",
       "files": [
@@ -1318,8 +1726,39 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
+    "MimeKit/1.4.1": {
+      "sha512": "4PiNzbvR8rlBx6nekth+Mm0oWSmdRbmLzvaUuq+JQo7FK6HBqxQgKC824AFDlqWG+cYX3OqGhRA5D8c6eGjTIQ==",
+      "type": "package",
+      "path": "MimeKit/1.4.1",
+      "files": [
+        "MimeKit.1.4.1.nupkg.sha512",
+        "MimeKit.nuspec",
+        "lib/MonoAndroid10/BouncyCastle.dll",
+        "lib/MonoAndroid10/MimeKit.dll",
+        "lib/MonoAndroid10/MimeKit.xml",
+        "lib/Xamarin.iOS10/BouncyCastle.dll",
+        "lib/Xamarin.iOS10/MimeKit.dll",
+        "lib/Xamarin.iOS10/MimeKit.xml",
+        "lib/net35/MimeKit.dll",
+        "lib/net35/MimeKit.xml",
+        "lib/net40/MimeKit.dll",
+        "lib/net40/MimeKit.xml",
+        "lib/net45/MimeKit.dll",
+        "lib/net45/MimeKit.xml",
+        "lib/net451/MimeKit.dll",
+        "lib/net451/MimeKit.xml",
+        "lib/netstandard1.3/MimeKit.dll",
+        "lib/netstandard1.3/MimeKit.xml",
+        "lib/portable-net45+win+wp80+MonoAndroid10+Xamarin.iOS10+MonoTouch10/MimeKit.dll",
+        "lib/portable-net45+win+wp80+MonoAndroid10+Xamarin.iOS10+MonoTouch10/MimeKit.xml",
+        "lib/portable-net45+win+wp80+MonoAndroid10+Xamarin.iOS10+MonoTouch10/Portable.Text.Encoding.dll",
+        "lib/wpa81/MimeKit.dll",
+        "lib/wpa81/MimeKit.xml",
+        "lib/wpa81/Portable.Text.Encoding.dll"
+      ]
+    },
     "NETStandard.Library/1.6.0": {
-      "sha512": "ypsCvIdCZ4IoYASJHt6tF2fMo7N30NLgV1EbmC+snO490OMl9FvVxmumw14rhReWU3j3g7BYudG6YCrchwHJlA==",
+      "sha512": "BTLeR+62dGb3TVutafgiymT8M4339g+NBXrPBQ+UCMPmvukzuPkLihHthp+9spUU8OKSPdKzfXPsk1fwsSf62g==",
       "type": "package",
       "path": "NETStandard.Library/1.6.0",
       "files": [
@@ -1353,8 +1792,27 @@
         "tools/install.ps1"
       ]
     },
+    "Portable.BouncyCastle/1.8.1.1": {
+      "sha512": "bKqC2Me9ukybNYTBhlYd2sJ6j2kRV7SgB+JfiP2GueYq6QdM4Ym6PYV5eyrqb6KViOyd3zqQfJp0o6UW5ZG+GQ==",
+      "type": "package",
+      "path": "Portable.BouncyCastle/1.8.1.1",
+      "files": [
+        "Portable.BouncyCastle.1.8.1.1.nupkg.sha512",
+        "Portable.BouncyCastle.nuspec",
+        "Readme.html",
+        "lib/netstandard1.0/crypto.dll",
+        "lib/netstandard1.0/crypto.pdb",
+        "lib/netstandard1.0/crypto.xml",
+        "lib/netstandard1.3/crypto.dll",
+        "lib/netstandard1.3/crypto.pdb",
+        "lib/netstandard1.3/crypto.xml",
+        "lib/portable-net4+sl5+wp8+win8+wpa81/crypto.dll",
+        "lib/portable-net4+sl5+wp8+win8+wpa81/crypto.pdb",
+        "lib/portable-net4+sl5+wp8+win8+wpa81/crypto.xml"
+      ]
+    },
     "runtime.native.System/4.0.0": {
-      "sha512": "QfS/nQI7k/BLgmLrw7qm7YBoULEvgWnPI+cYsbfCVFTW8Aj+i8JhccxcFMu1RWms0YZzF+UHguNBK4Qn89e2Sg==",
+      "sha512": "VBgICLw9aXIPgSNEQS4y6hhbarVhfHW0dGPDT0aLBPB47J7Ne3FiWZfm6ggpGCAZS1M+gqvgYwnondWfjAZJjw==",
       "type": "package",
       "path": "runtime.native.System/4.0.0",
       "files": [
@@ -1366,7 +1824,7 @@
       ]
     },
     "runtime.native.System.IO.Compression/4.1.0": {
-      "sha512": "Ob7nvnJBox1aaB222zSVZSkf4WrebPG4qFscfK7vmD7P7NxoSxACQLtO7ytWpqXDn2wcd/+45+EAZ7xjaPip8A==",
+      "sha512": "xvzBVMZmAQt+9kcrJM8hKm3s594IwLprJhr13uY2Pl+H5b1R4mdwlXzzRL2Si5P1XRB4OfX2EUQ+/I6aAQUnGQ==",
       "type": "package",
       "path": "runtime.native.System.IO.Compression/4.1.0",
       "files": [
@@ -1378,7 +1836,7 @@
       ]
     },
     "runtime.native.System.Net.Http/4.0.1": {
-      "sha512": "Nh0UPZx2Vifh8r+J+H2jxifZUD3sBrmolgiFWJd2yiNrxO0xTa6bAw3YwRn1VOiSen/tUXMS31ttNItCZ6lKuA==",
+      "sha512": "pq+jS8czk89PWuZSIoIv4b3eAoQVYe0xheQH35GaNoCDC6EprrZT9/osWRpnnKBMUKyqpRXkHtnCmpoTrMnc5A==",
       "type": "package",
       "path": "runtime.native.System.Net.Http/4.0.1",
       "files": [
@@ -1389,8 +1847,20 @@
         "runtime.native.System.Net.Http.nuspec"
       ]
     },
+    "runtime.native.System.Net.Security/4.0.1": {
+      "sha512": "nb3TMmu4GHY8tyi5KR6JYTUH/XUR7596oz4pIgTQIbrkHQann2TmadWhDLhAVFGB8P422CdVFeQNOiDBKksRpQ==",
+      "type": "package",
+      "path": "runtime.native.System.Net.Security/4.0.1",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/netstandard1.0/_._",
+        "runtime.native.System.Net.Security.4.0.1.nupkg.sha512",
+        "runtime.native.System.Net.Security.nuspec"
+      ]
+    },
     "runtime.native.System.Security.Cryptography/4.0.0": {
-      "sha512": "2CQK0jmO6Eu7ZeMgD+LOFbNJSXHFVQbCJJkEyEwowh1SCgYnrn9W9RykMfpeeVGw7h4IBvYikzpGUlmZTUafJw==",
+      "sha512": "1Ymi/7ZFTMtMVz0hamB/J8shxj488cn/9KADkIoC0UNbQ8R3y5DF+N7wokVOdmMxpYEZsaxMghZZMzWnnwxCpQ==",
       "type": "package",
       "path": "runtime.native.System.Security.Cryptography/4.0.0",
       "files": [
@@ -1402,7 +1872,7 @@
       ]
     },
     "System.AppContext/4.1.0": {
-      "sha512": "3QjO4jNV7PdKkmQAVp9atA+usVnKRwI3Kx1nMwJ93T0LcQfx7pKAYk0nKz5wn1oP5iqlhZuy6RXOFdhr7rDwow==",
+      "sha512": "S5QRev4EAhdHN/CDzgxhS8kdcZROzVAozb9/pUUBqlo6g/o6KcQD91KT2LtXI7PYbC7c41nN9awcw25dB+iunQ==",
       "type": "package",
       "path": "System.AppContext/4.1.0",
       "files": [
@@ -1455,7 +1925,7 @@
       ]
     },
     "System.Buffers/4.0.0": {
-      "sha512": "msXumHfjjURSkvxUjYuq4N2ghHoRi2VpXcKMA7gK6ujQfU3vGpl+B6ld0ATRg+FZFpRyA6PgEPA+VlIkTeNf2w==",
+      "sha512": "KC/gLTbnXf9u6aQYHVyqOOPbc/bahWUdC/42X7/GxzEYpsFu4jArMME1RVDBugBmzwI/O/aaQVMmxDXW8oHtpA==",
       "type": "package",
       "path": "System.Buffers/4.0.0",
       "files": [
@@ -1468,7 +1938,7 @@
       ]
     },
     "System.Collections/4.0.11": {
-      "sha512": "YUJGz6eFKqS0V//mLt25vFGrrCvOnsXjlvFQs+KimpwNxug9x0Pzy4PlFMU3Q2IzqAa9G2L4LsK3+9vCBK7oTg==",
+      "sha512": "lX2YqHKgDDSBUGSckaarOCKqlooPs6hb2vCiq6dcThvhc1AiRjgQYcOplKQs/o42y1VHGL1+Eet0Z3GGEM0sGw==",
       "type": "package",
       "path": "System.Collections/4.0.11",
       "files": [
@@ -1534,7 +2004,7 @@
       ]
     },
     "System.Collections.Concurrent/4.0.12": {
-      "sha512": "2gBcbb3drMLgxlI0fBfxMA31ec6AEyYCHygGse4vxceJan8mRIWeKJ24BFzN7+bi/NFTgdIgufzb94LWO5EERQ==",
+      "sha512": "Un+QCVKWS1soQNpAfSLNMS9a3DMN6m5v8gYJlQreRWUTIn8c6V9fzSVoO7Ef/R66YdbK99KLyh7OxDMzLnTeyg==",
       "type": "package",
       "path": "System.Collections.Concurrent/4.0.12",
       "files": [
@@ -1600,7 +2070,7 @@
       ]
     },
     "System.Console/4.0.0": {
-      "sha512": "qSKUSOIiYA/a0g5XXdxFcUFmv1hNICBD7QZ0QhGYVipPIhvpiydY8VZqr1thmCXvmn8aipMg64zuanB4eotK9A==",
+      "sha512": "+SanZqG8F4NSG7ICO/AP1Lafs0iWbEz1AblnOc0Id00dd28QT1jWLdIzz/qPbny5vHpw5OL4Frh1Z+tj2z5p5A==",
       "type": "package",
       "path": "System.Console/4.0.0",
       "files": [
@@ -1635,8 +2105,57 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
+    "System.Data.Common/4.1.0": {
+      "sha512": "epU8jeTe7aE7RqGHq9rZ8b0Q4Ah7DgubzHQblgZMSqgW1saW868WmooSyC5ywf8upLBkcVLDu93W9GPWUYsU2Q==",
+      "type": "package",
+      "path": "System.Data.Common/4.1.0",
+      "files": [
+        "System.Data.Common.4.1.0.nupkg.sha512",
+        "System.Data.Common.nuspec",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net451/System.Data.Common.dll",
+        "lib/netstandard1.2/System.Data.Common.dll",
+        "lib/portable-net451+win8+wp8+wpa81/System.Data.Common.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net451/System.Data.Common.dll",
+        "ref/netstandard1.2/System.Data.Common.dll",
+        "ref/netstandard1.2/System.Data.Common.xml",
+        "ref/netstandard1.2/de/System.Data.Common.xml",
+        "ref/netstandard1.2/es/System.Data.Common.xml",
+        "ref/netstandard1.2/fr/System.Data.Common.xml",
+        "ref/netstandard1.2/it/System.Data.Common.xml",
+        "ref/netstandard1.2/ja/System.Data.Common.xml",
+        "ref/netstandard1.2/ko/System.Data.Common.xml",
+        "ref/netstandard1.2/ru/System.Data.Common.xml",
+        "ref/netstandard1.2/zh-hans/System.Data.Common.xml",
+        "ref/netstandard1.2/zh-hant/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/System.Data.Common.dll",
+        "ref/portable-net451+win8+wp8+wpa81/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/de/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/es/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/fr/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/it/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/ja/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/ko/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/ru/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/zh-hans/System.Data.Common.xml",
+        "ref/portable-net451+win8+wp8+wpa81/zh-hant/System.Data.Common.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._"
+      ]
+    },
     "System.Diagnostics.Debug/4.0.11": {
-      "sha512": "w5U95fVKHY4G8ASs/K5iK3J5LY+/dLFd4vKejsnI/ZhBsWS9hQakfx3Zr7lRWKg4tAw9r4iktyvsTagWkqYCiw==",
+      "sha512": "lJVxLHMmBDRzcnS9rDD/v0d1eA8kCeX1x1Eacf8HWRL7QNCGghzmwo+R2AXQja68Z2vsNabGx/3eDBgZXBZ3zA==",
       "type": "package",
       "path": "System.Diagnostics.Debug/4.0.11",
       "files": [
@@ -1702,7 +2221,7 @@
       ]
     },
     "System.Diagnostics.DiagnosticSource/4.0.0": {
-      "sha512": "YKglnq4BMTJxfcr6nuT08g+yJ0UxdePIHxosiLuljuHIUR6t4KhFsyaHOaOc1Ofqp0PUvJ0EmcgiEz6T7vEx3w==",
+      "sha512": "Fs9keFX/qyL3JU7lm+mTRwRVGJJGVVuKIoqSOL6/3s1+zH8tSNCG4T6Mb2gf2TLhQ6ezdPVgzo/VM/DVk42v8A==",
       "type": "package",
       "path": "System.Diagnostics.DiagnosticSource/4.0.0",
       "files": [
@@ -1721,7 +2240,7 @@
       ]
     },
     "System.Diagnostics.Tools/4.0.1": {
-      "sha512": "xBfJ8pnd4C17dWaC9FM6aShzbJcRNMChUMD42I6772KGGrqaFdumwhn9OdM68erj1ueNo3xdQ1EwiFjK5k8p0g==",
+      "sha512": "lW7d9zknnNRF3mXM8B2OF2uramUjorMNA6wVyUSoB4SMatfUYdi0NXuJWu6IJ/0DjzifTLwjk8PtKTyJofvtBw==",
       "type": "package",
       "path": "System.Diagnostics.Tools/4.0.1",
       "files": [
@@ -1776,7 +2295,7 @@
       ]
     },
     "System.Diagnostics.Tracing/4.1.0": {
-      "sha512": "vDN1PoMZCkkdNjvZLql592oYJZgS7URcJzJ7bxeBgGtx5UtR5leNm49VmfHGqIffX4FKacHbI3H6UyNSHQknBg==",
+      "sha512": "odxJNogsrBRVK2WyRtUfmkf8Onqu2tWeBTv3X84zi2OgdoPRFXb/VTK2FHWzswnvxXqM54JKGKM8m61K7hFLwA==",
       "type": "package",
       "path": "System.Diagnostics.Tracing/4.1.0",
       "files": [
@@ -1864,7 +2383,7 @@
       ]
     },
     "System.Dynamic.Runtime/4.0.11": {
-      "sha512": "db34f6LHYM0U0JpE+sOmjar27BnqTVkbLJhgfwMpTdgTigG/Hna3m2MYVwnFzGGKnEJk2UXFuoVTr8WUbU91/A==",
+      "sha512": "kTsOo3WxKSkj8qCmnB1PCpKxV+wI2MZ4FHVJ1R4QGmBK2QsGdEBIwdCdDNQSCztd12XNoacU3QLrrqTh6f20qw==",
       "type": "package",
       "path": "System.Dynamic.Runtime/4.0.11",
       "files": [
@@ -1933,7 +2452,7 @@
       ]
     },
     "System.Globalization/4.0.11": {
-      "sha512": "B95h0YLEL2oSnwF/XjqSWKnwKOy/01VWkNlsCeMTFJLLabflpGV26nK164eRs5GiaRSBGpOxQ3pKoSnnyZN5pg==",
+      "sha512": "2UzCyZxsq8tJ9Z2XqECzFtIPMQdctlNUFtXD53TPc5ZJVFvyGbtHNAFsD5tDLvAHpAX3QqXovlQSFD2F/cS5cQ==",
       "type": "package",
       "path": "System.Globalization/4.0.11",
       "files": [
@@ -1999,7 +2518,7 @@
       ]
     },
     "System.Globalization.Calendars/4.0.1": {
-      "sha512": "L1c6IqeQ88vuzC1P81JeHmHA8mxq8a18NUBNXnIY/BVb+TCyAaGIFbhpZt60h9FJNmisymoQkHEFSE9Vslja1Q==",
+      "sha512": "M3gwIB3X1WTcu28B1TMxUo6kMJnRMZuS6CSy8wJXooDBUDYaMyN6An1/b9RAAtuIIEbKm6hCB0qba6PO5BJSOg==",
       "type": "package",
       "path": "System.Globalization.Calendars/4.0.1",
       "files": [
@@ -2035,7 +2554,7 @@
       ]
     },
     "System.Globalization.Extensions/4.0.1": {
-      "sha512": "KKo23iKeOaIg61SSXwjANN7QYDr/3op3OWGGzDzz7mypx0Za0fZSeG0l6cco8Ntp8YMYkIQcAqlk8yhm5/Uhcg==",
+      "sha512": "DPSisYSsNJZ16M08F/FPDjxtr0cefedTQnh4v6itDaQnmbDScSTgc5cXbjmIXk1WtQVA4ixZLVmY2PWvU6cTrQ==",
       "type": "package",
       "path": "System.Globalization.Extensions/4.0.1",
       "files": [
@@ -2074,7 +2593,7 @@
       ]
     },
     "System.IO/4.1.0": {
-      "sha512": "3KlTJceQc3gnGIaHZ7UBZO26SHL1SHE4ddrmiwumFnId+CEHP+O8r386tZKaE6zlk5/mF8vifMBzHj9SaXN+mQ==",
+      "sha512": "sfnPc9wuqGjO4CBDqzXYwKr8EAZb8YDvudMAcoJYfkOn773b1diYjkrS8Tk2kUidEp1UFMKfacKFMCKoaQtT2g==",
       "type": "package",
       "path": "System.IO/4.1.0",
       "files": [
@@ -2153,7 +2672,7 @@
       ]
     },
     "System.IO.Compression/4.1.0": {
-      "sha512": "TjnBS6eztThSzeSib+WyVbLzEdLKUcEHN69VtS3u8aAsSc18FU6xCZlNWWsEd8SKcXAE+y1sOu7VbU8sUeM0sg==",
+      "sha512": "nAi4rt60N21OUCkeL66+hkDY50xn1sPgi/JZxHcVST7HZJT44/hY+dxe2mG0n4J6sFKEE6cnNYvpafqpAA/rqg==",
       "type": "package",
       "path": "System.IO.Compression/4.1.0",
       "files": [
@@ -2222,7 +2741,7 @@
       ]
     },
     "System.IO.Compression.ZipFile/4.0.1": {
-      "sha512": "hBQYJzfTbQURF10nLhd+az2NHxsU6MU7AB8RUf4IolBP5lOAm4Luho851xl+CqslmhI5ZH/el8BlngEk4lBkaQ==",
+      "sha512": "lp3Z64S8cZGg6c/AZzdfZBBUyYNcaimi3cbnbDy8LXoIiKJIpTuE0FzVb7fu+tiMEEhufcdI2dTaAZg+uipVbg==",
       "type": "package",
       "path": "System.IO.Compression.ZipFile/4.0.1",
       "files": [
@@ -2259,7 +2778,7 @@
       ]
     },
     "System.IO.FileSystem/4.0.1": {
-      "sha512": "IBErlVq5jOggAD69bg1t0pJcHaDbJbWNUZTPI96fkYWzwYbN6D9wRHMULLDd9dHsl7C2YsxXL31LMfPI1SWt8w==",
+      "sha512": "KrG4jcnQ4rrNK8zKVzL8cdIG/ZyiKuvsQ8hjp1ZnzTF5s5MCHOINIoLdPb/7WTgxs9J/Qu2u362fhMQ1MzRcPg==",
       "type": "package",
       "path": "System.IO.FileSystem/4.0.1",
       "files": [
@@ -2295,7 +2814,7 @@
       ]
     },
     "System.IO.FileSystem.Primitives/4.0.1": {
-      "sha512": "kWkKD203JJKxJeE74p8aF8y4Qc9r9WQx4C0cHzHPrY3fv/L/IhWnyCHaFJ3H1QPOH6A93whlQ2vG5nHlBDvzWQ==",
+      "sha512": "YGfLPyR4y6Jc7OtKTZCmKgnHksmTpESNZntZ+e1aXj3TfchFmSl10sUNYBIxf8RRXOeTR6GcQhHxYuf7Xu0+tg==",
       "type": "package",
       "path": "System.IO.FileSystem.Primitives/4.0.1",
       "files": [
@@ -2332,7 +2851,7 @@
       ]
     },
     "System.Linq/4.1.0": {
-      "sha512": "bQ0iYFOQI0nuTnt+NQADns6ucV4DUvMdwN6CbkB1yj8i7arTGiTN5eok1kQwdnnNWSDZfIUySQY+J3d5KjWn0g==",
+      "sha512": "xAcWWQeVKSKa6JUqcBK+ut5ZBcc1CAb6mXozi7cFIjiPICSCwR/uW6NLkwm3B2KlMxyX4dOfQg5NgcqNkrATpg==",
       "type": "package",
       "path": "System.Linq/4.1.0",
       "files": [
@@ -2402,7 +2921,7 @@
       ]
     },
     "System.Linq.Expressions/4.1.0": {
-      "sha512": "I+y02iqkgmCAyfbqOmSDOgqdZQ5tTj80Akm5BPSS8EeB0VGWdy6X1KCoYe8Pk6pwDoAKZUOdLVxnTJcExiv5zw==",
+      "sha512": "ip/68mquQ3DY7KnEPJRm/Vvto4VTK+WgvnHpR000JQb8PTEgaWc0OiU+//aI1CWkoUg0rheXzjAorJsyMzR05Q==",
       "type": "package",
       "path": "System.Linq.Expressions/4.1.0",
       "files": [
@@ -2484,7 +3003,7 @@
       ]
     },
     "System.Net.Http/4.1.0": {
-      "sha512": "ULq9g3SOPVuupt+Y3U+A37coXzdNisB1neFCSKzBwo182u0RDddKJF8I5+HfyXqK6OhJPgeoAwWXrbiUXuRDsg==",
+      "sha512": "ic9j/h0eVpxp12dt+Kp0UyTsDIzXsuHEFdDr24V06wGjcQIs6gDTVV319nuDUO6hvFxKMA96exgFYMTaNomNyw==",
       "type": "package",
       "path": "System.Net.Http/4.1.0",
       "files": [
@@ -2563,8 +3082,121 @@
         "runtimes/win/lib/netstandard1.3/System.Net.Http.dll"
       ]
     },
+    "System.Net.NameResolution/4.0.0": {
+      "sha512": "LWK0uMzb+3/TSXlgEsva21KsjXoB4peKCipUKnbs1BuJvr6qZZEH7pGFp4co9XRROgzniv3IzOq3/XxybNFkYw==",
+      "type": "package",
+      "path": "System.Net.NameResolution/4.0.0",
+      "files": [
+        "System.Net.NameResolution.4.0.0.nupkg.sha512",
+        "System.Net.NameResolution.nuspec",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Net.NameResolution.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Net.NameResolution.dll",
+        "ref/netstandard1.3/System.Net.NameResolution.dll",
+        "ref/netstandard1.3/System.Net.NameResolution.xml",
+        "ref/netstandard1.3/de/System.Net.NameResolution.xml",
+        "ref/netstandard1.3/es/System.Net.NameResolution.xml",
+        "ref/netstandard1.3/fr/System.Net.NameResolution.xml",
+        "ref/netstandard1.3/it/System.Net.NameResolution.xml",
+        "ref/netstandard1.3/ja/System.Net.NameResolution.xml",
+        "ref/netstandard1.3/ko/System.Net.NameResolution.xml",
+        "ref/netstandard1.3/ru/System.Net.NameResolution.xml",
+        "ref/netstandard1.3/zh-hans/System.Net.NameResolution.xml",
+        "ref/netstandard1.3/zh-hant/System.Net.NameResolution.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netstandard1.3/System.Net.NameResolution.dll",
+        "runtimes/win/lib/net46/System.Net.NameResolution.dll",
+        "runtimes/win/lib/netcore50/System.Net.NameResolution.dll",
+        "runtimes/win/lib/netstandard1.3/System.Net.NameResolution.dll"
+      ]
+    },
+    "System.Net.NetworkInformation/4.1.0": {
+      "sha512": "Q0rfeiW6QsiZuicGjrFA7cRr2+kXex0JIljTTxzI09GIftB8k+aNL31VsQD1sI2g31cw7UGDTgozA/FgeNSzsQ==",
+      "type": "package",
+      "path": "System.Net.NetworkInformation/4.1.0",
+      "files": [
+        "System.Net.NetworkInformation.4.1.0.nupkg.sha512",
+        "System.Net.NetworkInformation.nuspec",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/net46/System.Net.NetworkInformation.dll",
+        "lib/portable-net45+win8+wp8+wpa81/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/net46/System.Net.NetworkInformation.dll",
+        "ref/netcore50/System.Net.NetworkInformation.dll",
+        "ref/netcore50/System.Net.NetworkInformation.xml",
+        "ref/netcore50/de/System.Net.NetworkInformation.xml",
+        "ref/netcore50/es/System.Net.NetworkInformation.xml",
+        "ref/netcore50/fr/System.Net.NetworkInformation.xml",
+        "ref/netcore50/it/System.Net.NetworkInformation.xml",
+        "ref/netcore50/ja/System.Net.NetworkInformation.xml",
+        "ref/netcore50/ko/System.Net.NetworkInformation.xml",
+        "ref/netcore50/ru/System.Net.NetworkInformation.xml",
+        "ref/netcore50/zh-hans/System.Net.NetworkInformation.xml",
+        "ref/netcore50/zh-hant/System.Net.NetworkInformation.xml",
+        "ref/netstandard1.0/System.Net.NetworkInformation.dll",
+        "ref/netstandard1.0/System.Net.NetworkInformation.xml",
+        "ref/netstandard1.0/de/System.Net.NetworkInformation.xml",
+        "ref/netstandard1.0/es/System.Net.NetworkInformation.xml",
+        "ref/netstandard1.0/fr/System.Net.NetworkInformation.xml",
+        "ref/netstandard1.0/it/System.Net.NetworkInformation.xml",
+        "ref/netstandard1.0/ja/System.Net.NetworkInformation.xml",
+        "ref/netstandard1.0/ko/System.Net.NetworkInformation.xml",
+        "ref/netstandard1.0/ru/System.Net.NetworkInformation.xml",
+        "ref/netstandard1.0/zh-hans/System.Net.NetworkInformation.xml",
+        "ref/netstandard1.0/zh-hant/System.Net.NetworkInformation.xml",
+        "ref/netstandard1.3/System.Net.NetworkInformation.dll",
+        "ref/netstandard1.3/System.Net.NetworkInformation.xml",
+        "ref/netstandard1.3/de/System.Net.NetworkInformation.xml",
+        "ref/netstandard1.3/es/System.Net.NetworkInformation.xml",
+        "ref/netstandard1.3/fr/System.Net.NetworkInformation.xml",
+        "ref/netstandard1.3/it/System.Net.NetworkInformation.xml",
+        "ref/netstandard1.3/ja/System.Net.NetworkInformation.xml",
+        "ref/netstandard1.3/ko/System.Net.NetworkInformation.xml",
+        "ref/netstandard1.3/ru/System.Net.NetworkInformation.xml",
+        "ref/netstandard1.3/zh-hans/System.Net.NetworkInformation.xml",
+        "ref/netstandard1.3/zh-hant/System.Net.NetworkInformation.xml",
+        "ref/portable-net45+win8+wp8+wpa81/_._",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/linux/lib/netstandard1.3/System.Net.NetworkInformation.dll",
+        "runtimes/osx/lib/netstandard1.3/System.Net.NetworkInformation.dll",
+        "runtimes/win/lib/net46/System.Net.NetworkInformation.dll",
+        "runtimes/win/lib/netcore50/System.Net.NetworkInformation.dll",
+        "runtimes/win/lib/netstandard1.3/System.Net.NetworkInformation.dll"
+      ]
+    },
     "System.Net.Primitives/4.0.11": {
-      "sha512": "hVvfl4405DRjA2408luZekbPhplJK03j2Y2lSfMlny7GHXlkByw1iLnc9mgKW0GdQn73vvMcWrWewAhylXA4Nw==",
+      "sha512": "WcKdVvIWWSjfY2hBwDIJ44DBAD4jj0X9tBH/pi0ljL3mC5ABNCiSNzHSFICqsZ6XY14GjUrbwR6ZAwakT2ldKw==",
       "type": "package",
       "path": "System.Net.Primitives/4.0.11",
       "files": [
@@ -2640,8 +3272,48 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
+    "System.Net.Security/4.0.0": {
+      "sha512": "6beDCnubgbOLKnsZ70VGDgUj6vIHgw83R3Epm3eXJsiVMAmJby/84iuXybRJ+kaPWZc5wTqB66vXsX32Bg3quw==",
+      "type": "package",
+      "path": "System.Net.Security/4.0.0",
+      "files": [
+        "System.Net.Security.4.0.0.nupkg.sha512",
+        "System.Net.Security.nuspec",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Net.Security.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Net.Security.dll",
+        "ref/netstandard1.3/System.Net.Security.dll",
+        "ref/netstandard1.3/System.Net.Security.xml",
+        "ref/netstandard1.3/de/System.Net.Security.xml",
+        "ref/netstandard1.3/es/System.Net.Security.xml",
+        "ref/netstandard1.3/fr/System.Net.Security.xml",
+        "ref/netstandard1.3/it/System.Net.Security.xml",
+        "ref/netstandard1.3/ja/System.Net.Security.xml",
+        "ref/netstandard1.3/ko/System.Net.Security.xml",
+        "ref/netstandard1.3/ru/System.Net.Security.xml",
+        "ref/netstandard1.3/zh-hans/System.Net.Security.xml",
+        "ref/netstandard1.3/zh-hant/System.Net.Security.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netstandard1.6/System.Net.Security.dll",
+        "runtimes/win/lib/net46/System.Net.Security.dll",
+        "runtimes/win/lib/netstandard1.3/System.Net.Security.dll",
+        "runtimes/win7/lib/netcore50/_._"
+      ]
+    },
     "System.Net.Sockets/4.1.0": {
-      "sha512": "xAz0N3dAV/aR/9g8r0Y5oEqU1JRsz29F5EGb/WVHmX3jVSLqi2/92M5hTad2aNWovruXrJpJtgZ9fccPMG9uSw==",
+      "sha512": "wkJlM5TWNmrkd7bLMj+g4/r78SyJIX53PwqMzXNVnBWCkb/9R6Y7oUldAOIPZ5P5PGf7RE62e5vEuiUupKpXhg==",
       "type": "package",
       "path": "System.Net.Sockets/4.1.0",
       "files": [
@@ -2677,7 +3349,7 @@
       ]
     },
     "System.ObjectModel/4.0.12": {
-      "sha512": "tAgJM1xt3ytyMoW4qn4wIqgJYm7L7TShRZG4+Q4Qsi2PCcj96pXN7nRywS9KkB3p/xDUjc2HSwP9SROyPYDYKQ==",
+      "sha512": "NdejSVtBpw8cQU9zu1pyz24IAVhxtkt9i51GmE74/3OYnIURfoHkMRqowlGAuyIDH7ykenHFac+zRkEQ0IaCew==",
       "type": "package",
       "path": "System.ObjectModel/4.0.12",
       "files": [
@@ -2745,7 +3417,7 @@
       ]
     },
     "System.Reflection/4.1.0": {
-      "sha512": "JCKANJ0TI7kzoQzuwB/OoJANy1Lg338B6+JVacPl4TpUwi3cReg3nMLplMq2uqYfHFQpKIlHAUVAJlImZz/4ng==",
+      "sha512": "IWDYHncBBWotVjfYZhkjEMt90+1no1ePTtvUgCzqq6GR5Y2qmW6uS4mdEe4DUSvfsVCseRKtChzRrtEiXfblGA==",
       "type": "package",
       "path": "System.Reflection/4.1.0",
       "files": [
@@ -2824,7 +3496,7 @@
       ]
     },
     "System.Reflection.Emit/4.0.1": {
-      "sha512": "P2wqAj72fFjpP6wb9nSfDqNBMab+2ovzSDzUZK7MVIm54tBJEPr9jWfSjjoTpPwj1LeKcmX3vr0ttyjSSFM47g==",
+      "sha512": "7w7/sOT0RT0Qt5UAa+KT2nVHuM10MTkrKyTuQ9WPIc8bzxIIGgjLjznJMSPWe0V2LcHZo06E5OpV6vZzbYShmQ==",
       "type": "package",
       "path": "System.Reflection.Emit/4.0.1",
       "files": [
@@ -2854,7 +3526,7 @@
       ]
     },
     "System.Reflection.Emit.ILGeneration/4.0.1": {
-      "sha512": "Ov6dU8Bu15Bc7zuqttgHF12J5lwSWyTf1S+FJouUXVMSqImLZzYaQ+vRr1rQ0OZ0HqsrwWl4dsKHELckQkVpgA==",
+      "sha512": "U9De1Z/pPfGITC6vTJk9wtLgRxDyVKHRw2w0zGL1n2F6qIlDIONYTpAOWaPOBDv+6EOebIY2qHDBSnGj3u7Dyg==",
       "type": "package",
       "path": "System.Reflection.Emit.ILGeneration/4.0.1",
       "files": [
@@ -2885,7 +3557,7 @@
       ]
     },
     "System.Reflection.Emit.Lightweight/4.0.1": {
-      "sha512": "sSzHHXueZ5Uh0OLpUQprhr+ZYJrLPA2Cmr4gn0wj9+FftNKXx8RIMKvO9qnjk2ebPYUjZ+F2ulGdPOsvj+MEjA==",
+      "sha512": "vt8HjUcSFWUnnMD5M+DfH00IRnJYxfcykZxL8WFirOqrxPlOpMtrl6elMrakML0ehIGgSrXosZPmWDIHccYg5g==",
       "type": "package",
       "path": "System.Reflection.Emit.Lightweight/4.0.1",
       "files": [
@@ -2916,7 +3588,7 @@
       ]
     },
     "System.Reflection.Extensions/4.0.1": {
-      "sha512": "GYrtRsZcMuHF3sbmRHfMYpvxZoIN2bQGrYGerUiWLEkqdEUQZhH3TRSaC/oI4wO0II1RKBPlpIa1TOMxIcOOzQ==",
+      "sha512": "s73utCY25z75OC0N3UaZ2cYBqBOrBRH1YHrwf4x5wufQwIDEVGVz01M7Pj5Qrdq+1QVhyL5MxJl/99xdCZM1RA==",
       "type": "package",
       "path": "System.Reflection.Extensions/4.0.1",
       "files": [
@@ -2971,7 +3643,7 @@
       ]
     },
     "System.Reflection.Primitives/4.0.1": {
-      "sha512": "4inTox4wTBaDhB7V3mPvp9XlCbeGYWVEM9/fXALd52vNEAVisc1BoVWQPuUuD0Ga//dNbA/WeMy9u9mzLxGTHQ==",
+      "sha512": "fuKUockmyIdQqgWlmJh1oCo+eXEDX2WLGRkpJqYsHiAMQNHxfsSuM7hY6kYPyVXEg6T/r73IK4YPnefiPrODSw==",
       "type": "package",
       "path": "System.Reflection.Primitives/4.0.1",
       "files": [
@@ -3026,7 +3698,7 @@
       ]
     },
     "System.Reflection.TypeExtensions/4.1.0": {
-      "sha512": "tsQ/ptQ3H5FYfON8lL4MxRk/8kFyE0A+tGPXmVP967cT/gzLHYxIejIYSxp4JmIeFHVP78g/F2FE1mUUTbDtrg==",
+      "sha512": "ZCDdyKPfiJAfHNeNQYGVWexcrF1ejkknGxbdp4dPaL2P+8un90auKbTGE5JTfS99hRZN4M5nWsFw1s3r7nzTAg==",
       "type": "package",
       "path": "System.Reflection.TypeExtensions/4.1.0",
       "files": [
@@ -3078,7 +3750,7 @@
       ]
     },
     "System.Resources.ResourceManager/4.0.1": {
-      "sha512": "TxwVeUNoTgUOdQ09gfTjvW411MF+w9MBYL7AtNVc+HtBCFlutPLhUCdZjNkjbhj3bNQWMdHboF0KIWEOjJssbA==",
+      "sha512": "OktU09a/iy2ezwQo6oYSgkO4eMvb0uiK3auY5ztriCdMcJyFrSEzE2meg8zJpOgtotHMTyuQJL2OvptC95pexg==",
       "type": "package",
       "path": "System.Resources.ResourceManager/4.0.1",
       "files": [
@@ -3133,7 +3805,7 @@
       ]
     },
     "System.Runtime/4.1.0": {
-      "sha512": "v6c/4Yaa9uWsq+JMhnOFewrYkgdNHNG2eMKuNqRn8P733rNXeRCGvV5FkkjBXn2dbVkPXOsO0xjsEeM1q2zC0g==",
+      "sha512": "mVVuuPuI1Bw95hLwuQ9xOJlcAGjMD5D9AIo7nqHcBQn6H7PBlx1CJfTc8xBmE4Tv01Qz2u2ONfz26G3gnKhtmA==",
       "type": "package",
       "path": "System.Runtime/4.1.0",
       "files": [
@@ -3223,7 +3895,7 @@
       ]
     },
     "System.Runtime.Extensions/4.1.0": {
-      "sha512": "CUOHjTT/vgP0qGW22U4/hDlOqXmcPq5YicBaXdUR2UiUoLwBT+olO6we4DVbq57jeX5uXH2uerVZhf0qGj+sVQ==",
+      "sha512": "CeS5nO+QFmpjbFJU0HsmWg23xPldCrZ1BfhTlICofO0C8IUHzBhMqkUW/6VWTyM+Xa2selRuEujkpKx2dIo3jA==",
       "type": "package",
       "path": "System.Runtime.Extensions/4.1.0",
       "files": [
@@ -3302,7 +3974,7 @@
       ]
     },
     "System.Runtime.Handles/4.0.1": {
-      "sha512": "nCJvEKguXEvk2ymk1gqj625vVnlK3/xdGzx0vOKicQkoquaTBJTP13AIYkocSUwHCLNBwUbXTqTWGDxBTWpt7g==",
+      "sha512": "PEZ3kQMFJhe+LNBjuoqCiLQ6h2ZGA1Zex/RuPjYaJ3UaGpjqSmHcD/cjjt6LymyNslELDMFivVcUXIabFpHqKA==",
       "type": "package",
       "path": "System.Runtime.Handles/4.0.1",
       "files": [
@@ -3338,7 +4010,7 @@
       ]
     },
     "System.Runtime.InteropServices/4.1.0": {
-      "sha512": "16eu3kjHS633yYdkjwShDHZLRNMKVi/s0bY8ODiqJ2RfMhDMAwxZaUaWVnZ2P71kr/or+X9o/xFWtNqz8ivieQ==",
+      "sha512": "98MYP3Mu18bi8oY76+nSOmogiYtQ/RTz9bi2DYM5TcWsCJNRsNLnnOrAXFuUzaTIgR9jPZZNyyGx+unNRIVq5Q==",
       "type": "package",
       "path": "System.Runtime.InteropServices/4.1.0",
       "files": [
@@ -3426,7 +4098,7 @@
       ]
     },
     "System.Runtime.InteropServices.RuntimeInformation/4.0.0": {
-      "sha512": "hWPhJxc453RCa8Z29O91EmfGeZIHX1ZH2A8L6lYQVSaKzku2DfArSfMEb1/MYYzPQRJZeu0c9dmYeJKxW5Fgng==",
+      "sha512": "BppPWXvyVgCGyi0jsL4HvuNVjDD5peICD8TYy7uhN4zKbtCjjWFELj14HlbMxDiculLQLzIehz6xT2yJVGDCiQ==",
       "type": "package",
       "path": "System.Runtime.InteropServices.RuntimeInformation/4.0.0",
       "files": [
@@ -3458,7 +4130,7 @@
       ]
     },
     "System.Runtime.Numerics/4.0.1": {
-      "sha512": "+XbKFuzdmLP3d1o9pdHu2nxjNr2OEPqGzKeegPLCUMM71a0t50A/rOcIRmGs9wR7a8KuHX6hYs/7/TymIGLNqg==",
+      "sha512": "wsx9qsGuAAHK5cGdpPhq8yxpH/KLSd6DgSCwhJ492kTcu3jj7L3Y05yGfmhyj+swyTnFHFjBmcsewWzAxYnWUA==",
       "type": "package",
       "path": "System.Runtime.Numerics/4.0.1",
       "files": [
@@ -3583,8 +4255,45 @@
         "runtimes/aot/lib/netcore50/System.Runtime.Serialization.Primitives.dll"
       ]
     },
+    "System.Security.Claims/4.0.1": {
+      "sha512": "GiCvCHoCOT+8QQgJ8LlXbnWORMxfk9UGseN0wG6ozTm7jS3gdhgNLw08hZuPfL5AeyvfQ//6ZcdvsxPT5vO47g==",
+      "type": "package",
+      "path": "System.Security.Claims/4.0.1",
+      "files": [
+        "System.Security.Claims.4.0.1.nupkg.sha512",
+        "System.Security.Claims.nuspec",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Security.Claims.dll",
+        "lib/netstandard1.3/System.Security.Claims.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Security.Claims.dll",
+        "ref/netstandard1.3/System.Security.Claims.dll",
+        "ref/netstandard1.3/System.Security.Claims.xml",
+        "ref/netstandard1.3/de/System.Security.Claims.xml",
+        "ref/netstandard1.3/es/System.Security.Claims.xml",
+        "ref/netstandard1.3/fr/System.Security.Claims.xml",
+        "ref/netstandard1.3/it/System.Security.Claims.xml",
+        "ref/netstandard1.3/ja/System.Security.Claims.xml",
+        "ref/netstandard1.3/ko/System.Security.Claims.xml",
+        "ref/netstandard1.3/ru/System.Security.Claims.xml",
+        "ref/netstandard1.3/zh-hans/System.Security.Claims.xml",
+        "ref/netstandard1.3/zh-hant/System.Security.Claims.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._"
+      ]
+    },
     "System.Security.Cryptography.Algorithms/4.2.0": {
-      "sha512": "8JQFxbLVdrtIOKMDN38Fn0GWnqYZw/oMlwOUG/qz1jqChvyZlnUmu+0s7wLx7JYua/nAXoESpHA3iw11QFWhXg==",
+      "sha512": "jUN7HznDRIHSiSsKHK89tzKCIUkiBdkcyIOaiFCW5hBhMo/aEkEWiRIXxTd1UlZyoy2m+VmwFDQfPPwmH/rTDg==",
       "type": "package",
       "path": "System.Security.Cryptography.Algorithms/4.2.0",
       "files": [
@@ -3622,7 +4331,7 @@
       ]
     },
     "System.Security.Cryptography.Cng/4.2.0": {
-      "sha512": "cUJ2h+ZvONDe28Szw3st5dOHdjndhJzQ2WObDEXAWRPEQBtVItVoxbXM/OEsTthl3cNn2dk2k0I3y45igCQcLw==",
+      "sha512": "Eo5OIGsUzLK8n6apczvw8+LQbLmzmdrFxWsEp1FS4dVgldob01GPO28pdA+7malHIaM66FAjKc4uFcSiX2aq1w==",
       "type": "package",
       "path": "System.Security.Cryptography.Cng/4.2.0",
       "files": [
@@ -3648,7 +4357,7 @@
       ]
     },
     "System.Security.Cryptography.Csp/4.0.0": {
-      "sha512": "/i1Usuo4PgAqgbPNC0NjbO3jPW//BoBlTpcWFD1EHVbidH21y4c1ap5bbEMSGAXjAShhMH4abi/K8fILrnu4BQ==",
+      "sha512": "5rJJJmmXePHxuqgeoB0BtXjD65Ez5sh3p7NtviZLnl6LTn325F7vxJ/fdieTWgV1Iq+r4PIfE8RRE3jmdX+Q7A==",
       "type": "package",
       "path": "System.Security.Cryptography.Csp/4.0.0",
       "files": [
@@ -3678,7 +4387,7 @@
       ]
     },
     "System.Security.Cryptography.Encoding/4.0.0": {
-      "sha512": "FbKgE5MbxSQMPcSVRgwM6bXN3GtyAh04NkV8E5zKCBE26X0vYW0UtTa2FIgkH33WVqBVxRgxljlVYumWtU+HcQ==",
+      "sha512": "HbLihKolW5YtmNFRJEpDibNFv0b4C8SH6hJVUljC+PU+vVPNdNoGKIaLZS7ZCHRU0ZBI5siSeFuaDAmEEaqDTw==",
       "type": "package",
       "path": "System.Security.Cryptography.Encoding/4.0.0",
       "files": [
@@ -3717,7 +4426,7 @@
       ]
     },
     "System.Security.Cryptography.OpenSsl/4.0.0": {
-      "sha512": "HUG/zNUJwEiLkoURDixzkzZdB5yGA5pQhDP93ArOpDPQMteURIGERRNzzoJlmTreLBWr5lkFSjjMSk8ySEpQMw==",
+      "sha512": "uemVfvoLdaeNsGK+r8RdhR+7+quaTh398cK95GsjXAqBnoIDeBFNPfVtjrjKSN2LLZBSax5XdwgpWT1VHEBDaA==",
       "type": "package",
       "path": "System.Security.Cryptography.OpenSsl/4.0.0",
       "files": [
@@ -3731,7 +4440,7 @@
       ]
     },
     "System.Security.Cryptography.Primitives/4.0.0": {
-      "sha512": "Wkd7QryWYjkQclX0bngpntW5HSlMzeJU24UaLJQ7YTfI8ydAVAaU2J+HXLLABOVJlKTVvAeL0Aj39VeTe7L+oA==",
+      "sha512": "3DJP7wP3mpRAIfn6VqIyIXPqpcDcNIa274V3DPS8d1mdGqBaCYnJmSMqRdCjA4qVp7W6rzsLIsSsgi08ztwqmg==",
       "type": "package",
       "path": "System.Security.Cryptography.Primitives/4.0.0",
       "files": [
@@ -3758,7 +4467,7 @@
       ]
     },
     "System.Security.Cryptography.X509Certificates/4.1.0": {
-      "sha512": "4HEfsQIKAhA1+ApNn729Gi09zh+lYWwyIuViihoMDWp1vQnEkL2ct7mAbhBlLYm+x/L4Rr/pyGge1lIY635e0w==",
+      "sha512": "iYTqFfBygnoncyFaHaRLwhGaUMmmYhbcYr+XADcL1rH++sRFhilhO5wcgjgZ7YHRsd/sXsCRGdzklSGJAj4Esw==",
       "type": "package",
       "path": "System.Security.Cryptography.X509Certificates/4.1.0",
       "files": [
@@ -3811,8 +4520,92 @@
         "runtimes/win/lib/netstandard1.6/System.Security.Cryptography.X509Certificates.dll"
       ]
     },
+    "System.Security.Principal/4.0.1": {
+      "sha512": "zD60WiaOtKWkyjHoLOgWu9Jt42BENeRguCCEMvqZa/CdKqlyYofc6jy7LBIvAOGhGY6ntReqlVBpusuv1ul6Pw==",
+      "type": "package",
+      "path": "System.Security.Principal/4.0.1",
+      "files": [
+        "System.Security.Principal.4.0.1.nupkg.sha512",
+        "System.Security.Principal.nuspec",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/netcore50/System.Security.Principal.dll",
+        "lib/netstandard1.0/System.Security.Principal.dll",
+        "lib/portable-net45+win8+wp8+wpa81/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/System.Security.Principal.dll",
+        "ref/netcore50/System.Security.Principal.xml",
+        "ref/netcore50/de/System.Security.Principal.xml",
+        "ref/netcore50/es/System.Security.Principal.xml",
+        "ref/netcore50/fr/System.Security.Principal.xml",
+        "ref/netcore50/it/System.Security.Principal.xml",
+        "ref/netcore50/ja/System.Security.Principal.xml",
+        "ref/netcore50/ko/System.Security.Principal.xml",
+        "ref/netcore50/ru/System.Security.Principal.xml",
+        "ref/netcore50/zh-hans/System.Security.Principal.xml",
+        "ref/netcore50/zh-hant/System.Security.Principal.xml",
+        "ref/netstandard1.0/System.Security.Principal.dll",
+        "ref/netstandard1.0/System.Security.Principal.xml",
+        "ref/netstandard1.0/de/System.Security.Principal.xml",
+        "ref/netstandard1.0/es/System.Security.Principal.xml",
+        "ref/netstandard1.0/fr/System.Security.Principal.xml",
+        "ref/netstandard1.0/it/System.Security.Principal.xml",
+        "ref/netstandard1.0/ja/System.Security.Principal.xml",
+        "ref/netstandard1.0/ko/System.Security.Principal.xml",
+        "ref/netstandard1.0/ru/System.Security.Principal.xml",
+        "ref/netstandard1.0/zh-hans/System.Security.Principal.xml",
+        "ref/netstandard1.0/zh-hant/System.Security.Principal.xml",
+        "ref/portable-net45+win8+wp8+wpa81/_._",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._"
+      ]
+    },
+    "System.Security.Principal.Windows/4.0.0": {
+      "sha512": "ICatlXKTZySDGUN+beGmmwv7XYk+ibUMroC4FcnpKU9ttSydd5Q6pg7UBHxJonKZyN/4Ar4MP/J3ppqXrvy1ZA==",
+      "type": "package",
+      "path": "System.Security.Principal.Windows/4.0.0",
+      "files": [
+        "System.Security.Principal.Windows.4.0.0.nupkg.sha512",
+        "System.Security.Principal.Windows.nuspec",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/net46/System.Security.Principal.Windows.dll",
+        "ref/net46/System.Security.Principal.Windows.dll",
+        "ref/netstandard1.3/System.Security.Principal.Windows.dll",
+        "ref/netstandard1.3/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/de/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/es/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/fr/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/it/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/ja/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/ko/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/ru/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/zh-hans/System.Security.Principal.Windows.xml",
+        "ref/netstandard1.3/zh-hant/System.Security.Principal.Windows.xml",
+        "runtimes/unix/lib/netstandard1.3/System.Security.Principal.Windows.dll",
+        "runtimes/win/lib/net46/System.Security.Principal.Windows.dll",
+        "runtimes/win/lib/netstandard1.3/System.Security.Principal.Windows.dll"
+      ]
+    },
     "System.Text.Encoding/4.0.11": {
-      "sha512": "U3gGeMlDZXxCEiY4DwVLSacg+DFWCvoiX+JThA/rvw37Sqrku7sEFeVBBBMBnfB6FeZHsyDx85HlKL19x0HtZA==",
+      "sha512": "YkK9WhMPMBUSO4SV16gKpw/sKKybqFpCReDmJj6StIjq1H0xV69DcloLkixFJc8wqXMet8U/K9HO9DF3OhObVQ==",
       "type": "package",
       "path": "System.Text.Encoding/4.0.11",
       "files": [
@@ -3877,8 +4670,45 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
+    "System.Text.Encoding.CodePages/4.0.1": {
+      "sha512": "Hb6Wd5SSenv83AWbJ9BFDEu8njR2qouWb4WMLtD7/iGR6ZtuQkDNqU1ue4riiJ75K9z49gCFcuOCgZVKCZGwEQ==",
+      "type": "package",
+      "path": "System.Text.Encoding.CodePages/4.0.1",
+      "files": [
+        "System.Text.Encoding.CodePages.4.0.1.nupkg.sha512",
+        "System.Text.Encoding.CodePages.nuspec",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Text.Encoding.CodePages.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/netstandard1.3/System.Text.Encoding.CodePages.dll",
+        "ref/netstandard1.3/System.Text.Encoding.CodePages.xml",
+        "ref/netstandard1.3/de/System.Text.Encoding.CodePages.xml",
+        "ref/netstandard1.3/es/System.Text.Encoding.CodePages.xml",
+        "ref/netstandard1.3/fr/System.Text.Encoding.CodePages.xml",
+        "ref/netstandard1.3/it/System.Text.Encoding.CodePages.xml",
+        "ref/netstandard1.3/ja/System.Text.Encoding.CodePages.xml",
+        "ref/netstandard1.3/ko/System.Text.Encoding.CodePages.xml",
+        "ref/netstandard1.3/ru/System.Text.Encoding.CodePages.xml",
+        "ref/netstandard1.3/zh-hans/System.Text.Encoding.CodePages.xml",
+        "ref/netstandard1.3/zh-hant/System.Text.Encoding.CodePages.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netstandard1.3/System.Text.Encoding.CodePages.dll",
+        "runtimes/win/lib/netstandard1.3/System.Text.Encoding.CodePages.dll"
+      ]
+    },
     "System.Text.Encoding.Extensions/4.0.11": {
-      "sha512": "jtbiTDtvfLYgXn8PTfWI+SiBs51rrmO4AAckx4KR6vFK9Wzf6tI8kcRdsYQNwriUeQ1+CtQbM1W4cMbLXnj/OQ==",
+      "sha512": "CNC+6UQTSr/Gta9j2AIppas+mW8Bigf/cpeh6uq8F50xRI3GTfMi36MXTcJ27rsDTlcJmdpQYJPQf+yUgcym3A==",
       "type": "package",
       "path": "System.Text.Encoding.Extensions/4.0.11",
       "files": [
@@ -3944,7 +4774,7 @@
       ]
     },
     "System.Text.RegularExpressions/4.1.0": {
-      "sha512": "i88YCXpRTjCnoSQZtdlHkAOx4KNNik4hMy83n0+Ftlb7jvV6ZiZWMpnEZHhjBp6hQVh8gWd/iKNPzlPF7iyA2g==",
+      "sha512": "Mv6h9BU7Lsuj4LNoPm7FlqGGynVH0B7b9r/ma5XmK3vwXu+CFLQ+NMA/i3IUCNCfSieZQPV+OwyswksQrDSnCA==",
       "type": "package",
       "path": "System.Text.RegularExpressions/4.1.0",
       "files": [
@@ -4025,7 +4855,7 @@
       ]
     },
     "System.Threading/4.0.11": {
-      "sha512": "N+3xqIcg3VDKyjwwCGaZ9HawG9aC6cSDI+s7ROma310GQo8vilFZa86hqKppwTHleR/G0sfOzhvgnUxWCR/DrQ==",
+      "sha512": "+QTV/KPeFQjrSwStKQu+lsiykL1Cm496caflavMUXxrVKYSH2NXx0Rpr7OE+LqenmfnN4tOQR6rKbNvraXwBbg==",
       "type": "package",
       "path": "System.Threading/4.0.11",
       "files": [
@@ -4093,8 +4923,36 @@
         "runtimes/aot/lib/netcore50/System.Threading.dll"
       ]
     },
+    "System.Threading.Overlapped/4.0.1": {
+      "sha512": "pHZnRMC3cxlzhLZUKR7KWwp3Bq2imv2SKg4b+8s5vLwSLTInkl/jXO2KH8VBlzFS3+4pBp/wYkeVZhRCTesHrw==",
+      "type": "package",
+      "path": "System.Threading.Overlapped/4.0.1",
+      "files": [
+        "System.Threading.Overlapped.4.0.1.nupkg.sha512",
+        "System.Threading.Overlapped.nuspec",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/net46/System.Threading.Overlapped.dll",
+        "ref/net46/System.Threading.Overlapped.dll",
+        "ref/netstandard1.3/System.Threading.Overlapped.dll",
+        "ref/netstandard1.3/System.Threading.Overlapped.xml",
+        "ref/netstandard1.3/de/System.Threading.Overlapped.xml",
+        "ref/netstandard1.3/es/System.Threading.Overlapped.xml",
+        "ref/netstandard1.3/fr/System.Threading.Overlapped.xml",
+        "ref/netstandard1.3/it/System.Threading.Overlapped.xml",
+        "ref/netstandard1.3/ja/System.Threading.Overlapped.xml",
+        "ref/netstandard1.3/ko/System.Threading.Overlapped.xml",
+        "ref/netstandard1.3/ru/System.Threading.Overlapped.xml",
+        "ref/netstandard1.3/zh-hans/System.Threading.Overlapped.xml",
+        "ref/netstandard1.3/zh-hant/System.Threading.Overlapped.xml",
+        "runtimes/unix/lib/netstandard1.3/System.Threading.Overlapped.dll",
+        "runtimes/win/lib/net46/System.Threading.Overlapped.dll",
+        "runtimes/win/lib/netcore50/System.Threading.Overlapped.dll",
+        "runtimes/win/lib/netstandard1.3/System.Threading.Overlapped.dll"
+      ]
+    },
     "System.Threading.Tasks/4.0.11": {
-      "sha512": "k1S4Gc6IGwtHGT8188RSeGaX86Qw/wnrgNLshJvsdNUOPP9etMmo8S07c+UlOAx4K/xLuN9ivA1bD0LVurtIxQ==",
+      "sha512": "lnQnUmhUa1jB4OQstpMxb9k1Y7nn1TNxXbkfFt2w5I21gyDVI/6RGO4TsFAORFZr14qz4v79G17xVslHGoiHuw==",
       "type": "package",
       "path": "System.Threading.Tasks/4.0.11",
       "files": [
@@ -4160,7 +5018,7 @@
       ]
     },
     "System.Threading.Tasks.Extensions/4.0.0": {
-      "sha512": "pH4FZDsZQ/WmgJtN4LWYmRdJAEeVkyriSwrv2Teoe5FOU0Yxlb6II6GL8dBPOfRmutHGATduj3ooMt7dJ2+i+w==",
+      "sha512": "/ZTi+yBKhFka+tzpuLuVjDr5Kj9g+N1ZPc2eKqkuX0AUDBvniJh15sIvd0PYhT7Coq1v88SoOnyjYsExHm1QwQ==",
       "type": "package",
       "path": "System.Threading.Tasks.Extensions/4.0.0",
       "files": [
@@ -4174,8 +5032,84 @@
         "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.xml"
       ]
     },
+    "System.Threading.Thread/4.0.0": {
+      "sha512": "UoA/6r0B4HG3hghgqonGrTnBjFksr8DsvqPBS2eNmP5ta4+j+EtOllfH6hoddiEcyeabYjJULWuukD8+9D9EJw==",
+      "type": "package",
+      "path": "System.Threading.Thread/4.0.0",
+      "files": [
+        "System.Threading.Thread.4.0.0.nupkg.sha512",
+        "System.Threading.Thread.nuspec",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Threading.Thread.dll",
+        "lib/netcore50/_._",
+        "lib/netstandard1.3/System.Threading.Thread.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Threading.Thread.dll",
+        "ref/netstandard1.3/System.Threading.Thread.dll",
+        "ref/netstandard1.3/System.Threading.Thread.xml",
+        "ref/netstandard1.3/de/System.Threading.Thread.xml",
+        "ref/netstandard1.3/es/System.Threading.Thread.xml",
+        "ref/netstandard1.3/fr/System.Threading.Thread.xml",
+        "ref/netstandard1.3/it/System.Threading.Thread.xml",
+        "ref/netstandard1.3/ja/System.Threading.Thread.xml",
+        "ref/netstandard1.3/ko/System.Threading.Thread.xml",
+        "ref/netstandard1.3/ru/System.Threading.Thread.xml",
+        "ref/netstandard1.3/zh-hans/System.Threading.Thread.xml",
+        "ref/netstandard1.3/zh-hant/System.Threading.Thread.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._"
+      ]
+    },
+    "System.Threading.ThreadPool/4.0.10": {
+      "sha512": "r53D7rQ+3+alKJhsJxTMuRCAUlfoyeOVavb4pAVHJS6nwyBEQLgRMEDhYvPeA6LaCJPYAkkL/rDxDsPtLREznw==",
+      "type": "package",
+      "path": "System.Threading.ThreadPool/4.0.10",
+      "files": [
+        "System.Threading.ThreadPool.4.0.10.nupkg.sha512",
+        "System.Threading.ThreadPool.nuspec",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Threading.ThreadPool.dll",
+        "lib/netcore50/_._",
+        "lib/netstandard1.3/System.Threading.ThreadPool.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Threading.ThreadPool.dll",
+        "ref/netstandard1.3/System.Threading.ThreadPool.dll",
+        "ref/netstandard1.3/System.Threading.ThreadPool.xml",
+        "ref/netstandard1.3/de/System.Threading.ThreadPool.xml",
+        "ref/netstandard1.3/es/System.Threading.ThreadPool.xml",
+        "ref/netstandard1.3/fr/System.Threading.ThreadPool.xml",
+        "ref/netstandard1.3/it/System.Threading.ThreadPool.xml",
+        "ref/netstandard1.3/ja/System.Threading.ThreadPool.xml",
+        "ref/netstandard1.3/ko/System.Threading.ThreadPool.xml",
+        "ref/netstandard1.3/ru/System.Threading.ThreadPool.xml",
+        "ref/netstandard1.3/zh-hans/System.Threading.ThreadPool.xml",
+        "ref/netstandard1.3/zh-hant/System.Threading.ThreadPool.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._"
+      ]
+    },
     "System.Threading.Timer/4.0.1": {
-      "sha512": "saGfUV8uqVW6LeURiqxcGhZ24PzuRNaUBtbhVeuUAvky1naH395A/1nY0P2bWvrw/BreRtIB/EzTDkGBpqCwEw==",
+      "sha512": "ihl7CzixD4E3PaXxlEPysY2sLZXfp7WdQcRfpLkDx/pMDsyI9r5MuWJBEalRUc8M8ytFv76Jdxt/b3Q4BKpJ6A==",
       "type": "package",
       "path": "System.Threading.Timer/4.0.1",
       "files": [
@@ -4228,7 +5162,7 @@
       ]
     },
     "System.Xml.ReaderWriter/4.0.11": {
-      "sha512": "ZIiLPsf67YZ9zgr31vzrFaYQqxRPX9cVHjtPSnmx4eN6lbS/yEyYNr2vs1doGDEscF0tjCZFsk9yUg1sC9e8tg==",
+      "sha512": "AqOJDTrrCc8l1e4mXY0/PSWpumY4jDA9VPBE4a8jA0ug8InqgbB5+BMtG6wLLSB0Hw43sLeYmEH/TMuRLzq/GQ==",
       "type": "package",
       "path": "System.Xml.ReaderWriter/4.0.11",
       "files": [
@@ -4296,7 +5230,7 @@
       ]
     },
     "System.Xml.XDocument/4.0.11": {
-      "sha512": "Mk2mKmPi0nWaoiYeotq1dgeNK1fqWh61+EK+w4Wu8SWuTYLzpUnschb59bJtGywaPq7SmTuPf44wrXRwbIrukg==",
+      "sha512": "MfpFwtYb6nTJjfhcowZ3nUVaCVUmK1TbehjkwsdsCBPlbr7bCLP53xs8Pz9fgPOB4DTnDTHL9GG2Z413OhS1rQ==",
       "type": "package",
       "path": "System.Xml.XDocument/4.0.11",
       "files": [
@@ -4376,6 +5310,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
+      "MailKit >= 1.4.1",
       "Monitorify.Publisher >= 1.0.0-*",
       "NETStandard.Library >= 1.6.0"
     ],

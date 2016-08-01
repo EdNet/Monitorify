@@ -36,6 +36,11 @@ namespace Monitorify.Core
             ListenerEnded?.Invoke(endPoint);
         }
 
+        public Task StopListening()
+        {
+            return Task.Factory.StartNew(() => { this._cancellationTokenSource.Cancel(); });
+        }
+
         private async Task DoRequest(EndPoint endPoint)
         {
             try
@@ -56,7 +61,6 @@ namespace Monitorify.Core
             catch (Exception ex)
             {
                 ErrorOccured?.Invoke(ex);
-                this._cancellationTokenSource.Cancel();
             }
         }
     }

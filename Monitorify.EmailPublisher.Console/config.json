@@ -1,12 +1,8 @@
 ﻿{
   "endpoints": [
     {
-      "name": "google",
-      "url": "http://www.google.com"
-    },
-    {
-      "name": "bing",
-      "url": "http://www.bing.com"
+      "name": "test",
+      "url": "https://uk-customermanagement-qa9.bapps.je-labs.com.localhost"
     }
   ],
   "pingDelay": "00:00:05"

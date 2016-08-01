@@ -14,5 +14,6 @@ namespace Monitorify.Core
 
         IHttpClient HttpClient { get; set; }
         Task StartListening(EndPoint endPoint, TimeSpan delay);
+        Task StopListening();
     }
 }

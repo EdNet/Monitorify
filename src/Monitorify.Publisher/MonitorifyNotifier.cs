@@ -11,6 +11,8 @@ namespace Monitorify.Publisher
         private readonly List<INotificationPublisher> _publishers;
         private Func<IMonitorifyService> _monitorifyServiceFunc;
 
+        public event Action<Exception> ErrorOccured;
+
         public MonitorifyNotifier()
         {
             _publishers = new List<INotificationPublisher>();
@@ -23,9 +25,14 @@ namespace Monitorify.Publisher
 
         public Task ListenAndNotify(IConfiguration configuration)
         {
-            var monitorifyService = _monitorifyServiceFunc.Invoke();
+            var monitorifyService = MonitorifyServiceFactory.Invoke();
             monitorifyService.WentOffline += MonitorifyServiceOnWentOffline;
             monitorifyService.BackOnline += MonitorifyServiceOnBackOnline;
+
+            if (ErrorOccured != null)
+            {
+                monitorifyService.ErrorOccured += ex => ErrorOccured(ex);
+            }
 
             return monitorifyService.Start(configuration);
         }

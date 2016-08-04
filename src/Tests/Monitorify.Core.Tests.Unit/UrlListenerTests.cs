@@ -102,7 +102,11 @@ namespace Monitorify.Core.Tests.Unit
             bool errorIsRaised = false;
             bool listenerIsEndedRaised = false;
             IUrlListener listener = new UrlListener();
-            listener.ErrorOccured += point => errorIsRaised = true;
+            listener.ErrorOccured += point =>
+            {
+                errorIsRaised = true;
+                listener.StopListening();
+            };
             listener.ListenerEnded += point => listenerIsEndedRaised = true;
 
             // Act

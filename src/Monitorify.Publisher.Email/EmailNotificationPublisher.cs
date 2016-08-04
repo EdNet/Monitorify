@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
+using MailKit;
 using MailKit.Net.Smtp;
 using MimeKit;
 using Monitorify.Core;
@@ -8,6 +10,7 @@ namespace Monitorify.Publisher.Email
     public class EmailNotificationPublisher : INotificationPublisher
     {
         private readonly EmailNotificationPublisherConfig _publisherConfig;
+        private Func<IMailTransport> _mailTransportFactory;
 
         public EmailNotificationPublisher(EmailNotificationPublisherConfig publisherConfig)
         {
@@ -26,6 +29,12 @@ namespace Monitorify.Publisher.Email
                 $"Endpoint {endPoint.Url} is back online. Outage time span is {endPoint.LastOutageTimeSpan.Value.ToString(@"d\.hh\:mm\:ss")}");
         }
 
+        public Func<IMailTransport> MailTransportFactory
+        {
+            get { return _mailTransportFactory ?? (_mailTransportFactory = () => new SmtpClient()); }
+            set { _mailTransportFactory = value; }
+        }
+
         private Task SendMessage(string subject, string body)
         {
             var message = new MimeMessage();
@@ -38,7 +47,7 @@ namespace Monitorify.Publisher.Email
                 Text = body
             };
 
-            using (var client = new SmtpClient())
+            using (var client = MailTransportFactory.Invoke())
             {
                 client.Connect(_publisherConfig.SmtpServer, _publisherConfig.SmtpPort, _publisherConfig.UseSsl);
 

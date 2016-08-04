@@ -24,7 +24,7 @@ namespace Monitorify.Core.Tests.Unit
             monitorifyService.UrlListenerFactory = () => urlListenerMock.Object;
 
             // Act
-            monitorifyService.Start(configurationMock.Object);
+            await monitorifyService.Start(configurationMock.Object);
             await Task.Delay(100);
 
             // Assert

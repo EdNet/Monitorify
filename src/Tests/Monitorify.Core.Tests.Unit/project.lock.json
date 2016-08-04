@@ -2706,7 +2706,7 @@
           "lib/netstandard1.1/xunit.runner.utility.dotnet.dll": {}
         }
       },
-      "Monitorify.Core/1.0.0.1": {
+      "Monitorify.Core/1.1.0.1": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.6",
         "dependencies": {
@@ -7913,7 +7913,7 @@
         "xunit.runner.utility.nuspec"
       ]
     },
-    "Monitorify.Core/1.0.0.1": {
+    "Monitorify.Core/1.1.0.1": {
       "type": "project",
       "path": "../../Monitorify.Core/project.json",
       "msbuildProject": "../../Monitorify.Core/Monitorify.Core.xproj"
@@ -7921,7 +7921,7 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Monitorify.Core >= 1.0.0.1-*",
+      "Monitorify.Core",
       "NETStandard.Library >= 1.6.0",
       "dotnet-test-xunit >= 2.2.0-preview2-build1029",
       "moq.netcore >= 4.4.0-beta8",
@@ -7934,13 +7934,13 @@
   },
   "tools": {
     ".NETCoreApp,Version=v1.0": {
-      "Microsoft.DotNet.Watcher.Tools/1.0.0-preview3-21697": {
+      "Microsoft.DotNet.Watcher.Tools/1.0.0-preview3-21792": {
         "type": "package",
         "dependencies": {
-          "Microsoft.DotNet.Watcher.Core": "1.0.0-preview3-21697",
-          "Microsoft.Extensions.CommandLineUtils": "1.1.0-alpha1-21697",
-          "Microsoft.Extensions.Logging": "1.1.0-alpha1-21697",
-          "Microsoft.Extensions.Logging.Console": "1.1.0-alpha1-21697",
+          "Microsoft.DotNet.Watcher.Core": "1.0.0-preview3-21792",
+          "Microsoft.Extensions.CommandLineUtils": "1.1.0-alpha1-21792",
+          "Microsoft.Extensions.Logging": "1.1.0-alpha1-21792",
+          "Microsoft.Extensions.Logging.Console": "1.1.0-alpha1-21792",
           "Microsoft.NETCore.App": "1.0.0",
           "System.Runtime.InteropServices.RuntimeInformation": "4.0.0"
         },

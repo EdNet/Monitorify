@@ -1,8 +1,12 @@
 ﻿{
   "endpoints": [
     {
-      "name": "api",
-      "url": "http://local.api.mtaxi.ee/api/heartbeat"
+      "name": "google",
+      "url": "http://www.google.com"
+    },
+    {
+      "name": "bing",
+      "url": "http://www.bing.com"
     }
   ],
   "pingDelay": "00:00:05"

@@ -9,6 +9,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Monitorify.Publisher")]
 [assembly: AssemblyTrademark("")]
+[assembly: InternalsVisibleTo("Monitorify.Publisher.Tests.Unit")]
+[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
 // to COM components.  If you need to access a type in this assembly from

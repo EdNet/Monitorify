@@ -7,11 +7,12 @@ using Monitorify.Core.Configuration;
 
 namespace Monitorify.Publisher
 {
-    public class MonitorifyNotifier : IMonitorifyNotifier
+    public class MonitorifyNotifier : IMonitorifyNotifier, IDisposable
     {
         private readonly ILogger _logger;
         private readonly List<INotificationPublisher> _publishers;
         private Func<IMonitorifyService> _monitorifyServiceFunc;
+        private IMonitorifyService _monitorifyService;
 
         public MonitorifyNotifier()
         {
@@ -32,23 +33,23 @@ namespace Monitorify.Publisher
 
         public Task ListenAndNotify(IConfiguration configuration)
         {
-            var monitorifyService = MonitorifyServiceFactory.Invoke();
-            monitorifyService.WentOffline += MonitorifyServiceOnWentOffline;
-            monitorifyService.BackOnline += MonitorifyServiceOnBackOnline;
-            monitorifyService.Offline += point =>
+            _monitorifyService = MonitorifyServiceFactory.Invoke();
+            _monitorifyService.WentOffline += MonitorifyServiceOnWentOffline;
+            _monitorifyService.BackOnline += MonitorifyServiceOnBackOnline;
+            _monitorifyService.Offline += point =>
             {
                 _logger.LogInformation($"Endpoint {point.Url} offline");
             };
-            monitorifyService.Online += point =>
+            _monitorifyService.Online += point =>
             {
                 _logger.LogInformation($"Endpoint {point.Url} online");
             };
-            monitorifyService.ErrorOccured += exception =>
+            _monitorifyService.ErrorOccured += exception =>
             {
                 _logger.LogError(exception.Message, exception);
             };
 
-            return monitorifyService.Start(configuration);
+            return _monitorifyService.Start(configuration);
         }
 
         internal Func<IMonitorifyService> MonitorifyServiceFactory
@@ -77,6 +78,12 @@ namespace Monitorify.Publisher
                 _publishers.ForEach(x => x.NotifyOffline(endPoint).Start());
                 _logger.LogInformation($"Offline notifications are sent for {endPoint.Url}");
             }
+        }
+
+        public void Dispose()
+        {
+            _monitorifyService.WentOffline -= MonitorifyServiceOnWentOffline;
+            _monitorifyService.BackOnline -= MonitorifyServiceOnBackOnline;
         }
     }
 }

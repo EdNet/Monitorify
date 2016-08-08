@@ -27,6 +27,7 @@ namespace Monitorify.Core
 
         public Task Start(IConfiguration configuration)
         {
+            ServiceStatus = ServiceStatus.Loading;
             return Task.Run(() =>
             {
                 foreach (var endPoint in configuration.EndPoints)
@@ -41,11 +42,14 @@ namespace Monitorify.Core
                         {
                             listener.HttpClient = httpClient;
                             listener.StartListening(endPoint, configuration.PingDelay);
+                            ServiceStatus = ServiceStatus.Running;
                         }
                     });
                 }
             });
         }
+
+        public ServiceStatus ServiceStatus { get; set; }
 
         internal Func<IUrlListener> UrlListenerFactory
         {

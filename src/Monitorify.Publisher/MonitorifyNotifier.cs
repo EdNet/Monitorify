@@ -11,17 +11,25 @@ namespace Monitorify.Publisher
     {
         private readonly ILogger _logger;
         private readonly List<INotificationPublisher> _publishers;
-        private Func<IMonitorifyService> _monitorifyServiceFunc;
-        private IMonitorifyService _monitorifyService;
+        private readonly IMonitorifyService _monitorifyService;
 
         public MonitorifyNotifier()
         {
             _publishers = new List<INotificationPublisher>();
             _logger = new LoggerFactory().AddConsole().CreateLogger("Monitorify.Publisher.MonitorifyNotifier");
+            _monitorifyService = new MonitorifyService();
         }
 
         public MonitorifyNotifier(ILogger logger)
         {
+            _publishers = new List<INotificationPublisher>();
+            _monitorifyService = new MonitorifyService();
+            _logger = logger;
+        }
+
+        public MonitorifyNotifier(ILogger logger, IMonitorifyService monitorifyService)
+        {
+            _monitorifyService = monitorifyService;
             _publishers = new List<INotificationPublisher>();
             _logger = logger;
         }
@@ -31,9 +39,8 @@ namespace Monitorify.Publisher
             _publishers.Add(publisher);
         }
 
-        public Task ListenAndNotify(IConfiguration configuration)
+        public async Task ListenAndNotify(IConfiguration configuration)
         {
-            _monitorifyService = MonitorifyServiceFactory.Invoke();
             _monitorifyService.WentOffline += MonitorifyServiceOnWentOffline;
             _monitorifyService.BackOnline += MonitorifyServiceOnBackOnline;
             _monitorifyService.Offline += point =>
@@ -49,13 +56,7 @@ namespace Monitorify.Publisher
                 _logger.LogError(exception.Message, exception);
             };
 
-            return _monitorifyService.Start(configuration);
-        }
-
-        internal Func<IMonitorifyService> MonitorifyServiceFactory
-        {
-            get { return _monitorifyServiceFunc ?? (_monitorifyServiceFunc = () => new MonitorifyService()); }
-            set { _monitorifyServiceFunc = value; }
+            await _monitorifyService.Start(configuration);
         }
 
         private void MonitorifyServiceOnBackOnline(EndPoint endPoint)

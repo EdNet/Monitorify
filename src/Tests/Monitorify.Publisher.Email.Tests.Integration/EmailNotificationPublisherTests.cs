@@ -11,7 +11,7 @@ namespace Monitorify.Publisher.Email.Tests.Integration
         {
             // Arrange
             var endpoint = new EndPoint { Name = "Google", Url = "https://www.google.com", LastOutageTimeSpan = DateTime.UtcNow.AddMinutes(-1) - DateTime.UtcNow.AddMinutes(-2) };
-            var config = new EmailNotificationPublisherConfig("smtp-mail.outlook.com", 587, true, "monitorify@outlook.com", "********", "monitorify@outlook.com", "monitorify@outlook.com");
+            var config = new EmailNotificationPublisherConfig("smtp-mail.outlook.com", 587, false, "monitorify@outlook.com", "*******", "monitorify@outlook.com", "eduard.truuvaart@gmail.com");
             var publisher = new EmailNotificationPublisher(config);
 
             // Act / Assert

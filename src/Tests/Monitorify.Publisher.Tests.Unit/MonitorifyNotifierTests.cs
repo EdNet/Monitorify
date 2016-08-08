@@ -9,17 +9,16 @@ namespace Monitorify.Publisher.Tests.Unit
     public class MonitorifyNotifierTests
     {
         [Fact]
-        public void ListenAndNotify_MonitorifyServiceIsStarted()
+        public async void ListenAndNotify_MonitorifyServiceIsStarted()
         {
             // Arrange
             var configurationMock = new Mock<Core.Configuration.IConfiguration>();
             var monitorifyServiceMock = new Mock<IMonitorifyService>();
             var loggerMock = new Mock<ILogger>();
-            var notifier = new MonitorifyNotifier(loggerMock.Object);
-            notifier.MonitorifyServiceFactory = () => monitorifyServiceMock.Object;
+            var notifier = new MonitorifyNotifier(loggerMock.Object, monitorifyServiceMock.Object);
 
             // Act
-            notifier.ListenAndNotify(configurationMock.Object);
+            await notifier.ListenAndNotify(configurationMock.Object);
 
             // Assert
             monitorifyServiceMock.Verify(x => x.Start(configurationMock.Object), Times.Once);
@@ -27,7 +26,7 @@ namespace Monitorify.Publisher.Tests.Unit
 
 
         [Fact]
-        public void ListenAndNotify_EndpointWentOffline_PublishersTriggerNotifyOffline()
+        public async void ListenAndNotify_EndpointWentOffline_PublishersTriggerNotifyOffline()
         {
             // Arrange
             var endpoint = new EndPoint { Name = "Test", Url = "http://test.test" };
@@ -37,12 +36,11 @@ namespace Monitorify.Publisher.Tests.Unit
             var configurationMock = new Mock<Core.Configuration.IConfiguration>();
             var monitorifyServiceMock = new Mock<IMonitorifyService>();
             var loggerMock = new Mock<ILogger>();
-            var notifier = new MonitorifyNotifier(loggerMock.Object);
+            var notifier = new MonitorifyNotifier(loggerMock.Object, monitorifyServiceMock.Object);
             notifier.AddPublisher(publisherMock.Object);
-            notifier.MonitorifyServiceFactory = () => monitorifyServiceMock.Object;
 
             // Act
-            notifier.ListenAndNotify(configurationMock.Object);
+            await notifier.ListenAndNotify(configurationMock.Object);
             monitorifyServiceMock.Raise(m => m.WentOffline += point => { }, endpoint);
 
             // Assert
@@ -50,7 +48,7 @@ namespace Monitorify.Publisher.Tests.Unit
         }
 
         [Fact]
-        public void ListenAndNotify_EndpointBackOnline_PublishersTriggerBackOnline()
+        public async void ListenAndNotify_EndpointBackOnline_PublishersTriggerBackOnline()
         {
             // Arrange
             var endpoint = new EndPoint { Name = "Test", Url = "http://test.test" };
@@ -60,12 +58,11 @@ namespace Monitorify.Publisher.Tests.Unit
             var configurationMock = new Mock<Core.Configuration.IConfiguration>();
             var monitorifyServiceMock = new Mock<IMonitorifyService>();
             var loggerMock = new Mock<ILogger>();
-            var notifier = new MonitorifyNotifier(loggerMock.Object);
+            var notifier = new MonitorifyNotifier(loggerMock.Object, monitorifyServiceMock.Object);
             notifier.AddPublisher(publisherMock.Object);
-            notifier.MonitorifyServiceFactory = () => monitorifyServiceMock.Object;
 
             // Act
-            notifier.ListenAndNotify(configurationMock.Object);
+            await notifier.ListenAndNotify(configurationMock.Object);
             monitorifyServiceMock.Raise(m => m.BackOnline += point => { }, endpoint);
 
             // Assert

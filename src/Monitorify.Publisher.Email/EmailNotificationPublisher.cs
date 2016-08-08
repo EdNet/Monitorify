@@ -35,7 +35,7 @@ namespace Monitorify.Publisher.Email
             set { _mailTransportFactory = value; }
         }
 
-        private Task SendMessage(string subject, string body)
+        private async Task SendMessage(string subject, string body)
         {
             var message = new MimeMessage();
             message.From.Add(new MailboxAddress("", _publisherConfig.FromEmail));
@@ -58,11 +58,8 @@ namespace Monitorify.Publisher.Email
                 // Note: only needed if the SMTP server requires authentication
                 client.Authenticate(_publisherConfig.UserName, _publisherConfig.Password);
 
-                return client.SendAsync(message).ContinueWith(task =>
-                {
-                    client.DisconnectAsync(true);
-                });
-
+                await client.SendAsync(message);
+                await client.DisconnectAsync(true);
             }
         }
     }

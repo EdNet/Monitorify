@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Monitorify.Core.Configuration;
 
 namespace Monitorify.Publisher

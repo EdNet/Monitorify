@@ -16,8 +16,8 @@ namespace Monitorify.EmailPublisher.Console
             provider.SetSource(filepath);
             IConfiguration configuration = provider.Read();
 
-            EmailNotificationPublisherConfig emailConfig = new EmailNotificationPublisherConfig("smtp.live.com", 25, true, "monitorify@outlook.com",
-                "*******", "monitorify@outlook.com", "eduard.truuvaart@hotmail.com");
+            EmailNotificationPublisherConfig emailConfig = new EmailNotificationPublisherConfig("smtp-mail.outlook.com", 587, false, "monitorify@outlook.com",
+                "*******", "monitorify@outlook.com", "monitorify@outlook.com");
 
             IMonitorifyNotifier notifier = new MonitorifyNotifier();
             notifier.AddEmailPublisher(emailConfig);

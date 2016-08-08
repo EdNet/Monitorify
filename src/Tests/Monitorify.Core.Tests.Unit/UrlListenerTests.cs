@@ -35,7 +35,7 @@ namespace Monitorify.Core.Tests.Unit
         }
 
         [Fact]
-        public void StartListening_EndpointIsOnline_OnlineEventIsRised()
+        public async void StartListening_EndpointIsOnline_OnlineEventIsRised()
         {
             // Arrange
             Mock<IHttpClient> httpMock = new Mock<IHttpClient>();
@@ -51,17 +51,21 @@ namespace Monitorify.Core.Tests.Unit
             bool endpointIsOnline = false;
             IUrlListener listener = new UrlListener();
             listener.HttpClient = httpMock.Object;
-            listener.ReportedOnline += point => endpointIsOnline = true;
+            listener.ReportedOnline += point =>
+            {
+                endpointIsOnline = true;
+                listener.StopListening();
+            };
 
             // Act
-            listener.StartListening(endPoint, TimeSpan.FromSeconds(3));
+            await listener.StartListening(endPoint, TimeSpan.FromSeconds(3));
 
             // Assert
             Assert.True(endpointIsOnline);
         }
 
         [Fact]
-        public void StartListening_EndpointIsOffline_OfflineEventIsRised()
+        public async void StartListening_EndpointIsOffline_OfflineEventIsRised()
         {
             // Arrange
             Mock<IHttpClient> httpMock = new Mock<IHttpClient>();
@@ -77,17 +81,21 @@ namespace Monitorify.Core.Tests.Unit
             bool endpointIsOffline = false;
             IUrlListener listener = new UrlListener();
             listener.HttpClient = httpMock.Object;
-            listener.ReportedOffline += point => endpointIsOffline = true;
+            listener.ReportedOffline += point =>
+            {
+                endpointIsOffline = true;
+                listener.StopListening();
+            };
 
             // Act
-            listener.StartListening(endPoint, TimeSpan.FromSeconds(3));
+            await listener.StartListening(endPoint, TimeSpan.FromSeconds(3));
 
             // Assert
             Assert.True(endpointIsOffline);
         }
 
         [Fact]
-        public void StartListening_ExceptionIsThrown_ErrorEventIsRaised()
+        public async void StartListening_ExceptionIsThrown_ErrorEventIsRaised()
         {
             // Arrange
             Mock<IHttpClient> httpMock = new Mock<IHttpClient>();
@@ -111,7 +119,7 @@ namespace Monitorify.Core.Tests.Unit
 
             // Act
             listener.HttpClient = httpMock.Object;
-            listener.StartListening(endPoint, TimeSpan.FromSeconds(0));
+            await listener.StartListening(endPoint, TimeSpan.FromSeconds(0));
 
             // Assert
             Assert.True(errorIsRaised);

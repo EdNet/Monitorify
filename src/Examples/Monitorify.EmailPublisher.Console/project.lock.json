@@ -7343,18 +7343,18 @@
     },
     "Monitorify.Core/1.1.0.1": {
       "type": "project",
-      "path": "../src/Monitorify.Core/project.json",
-      "msbuildProject": "../src/Monitorify.Core/Monitorify.Core.xproj"
+      "path": "../../Monitorify.Core/project.json",
+      "msbuildProject": "../../Monitorify.Core/Monitorify.Core.xproj"
     },
     "Monitorify.Publisher/1.0.0": {
       "type": "project",
-      "path": "../src/Monitorify.Publisher/project.json",
-      "msbuildProject": "../src/Monitorify.Publisher/Monitorify.Publisher.xproj"
+      "path": "../../Monitorify.Publisher/project.json",
+      "msbuildProject": "../../Monitorify.Publisher/Monitorify.Publisher.xproj"
     },
     "Monitorify.Publisher.Email/1.0.0": {
       "type": "project",
-      "path": "../src/Monitorify.Publisher.Email/project.json",
-      "msbuildProject": "../src/Monitorify.Publisher.Email/Monitorify.Publisher.Email.xproj"
+      "path": "../../Monitorify.Publisher.Email/project.json",
+      "msbuildProject": "../../Monitorify.Publisher.Email/Monitorify.Publisher.Email.xproj"
     }
   },
   "projectFileDependencyGroups": {

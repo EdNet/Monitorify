@@ -1,8 +1,10 @@
 ﻿using System;
 using System.IO;
+using Microsoft.Extensions.Configuration;
 using Monitorify.Core.Configuration;
 using Monitorify.Publisher;
 using Monitorify.Publisher.Email;
+using IConfiguration = Monitorify.Core.Configuration.IConfiguration;
 
 namespace Monitorify.EmailPublisher.Console
 {
@@ -10,6 +12,10 @@ namespace Monitorify.EmailPublisher.Console
     {
         public static void Main(string[] args)
         {
+            var builder = new ConfigurationBuilder().AddEnvironmentVariables();
+            var envConfig = builder.Build();
+            string password = envConfig["smtpPassword"];
+
             string filepath = Path.Combine(Directory.GetCurrentDirectory(), "config.json");
 
             IConfigurationReader provider = new JsonFileConfigurationReader();
@@ -17,7 +23,7 @@ namespace Monitorify.EmailPublisher.Console
             IConfiguration configuration = provider.Read();
 
             EmailNotificationPublisherConfig emailConfig = new EmailNotificationPublisherConfig("smtp-mail.outlook.com", 587, false, "monitorify@outlook.com",
-                "*******", "monitorify@outlook.com", "monitorify@outlook.com");
+                password, "monitorify@outlook.com", "monitorify@outlook.com");
 
             IMonitorifyNotifier notifier = new MonitorifyNotifier();
             notifier.AddEmailPublisher(emailConfig);

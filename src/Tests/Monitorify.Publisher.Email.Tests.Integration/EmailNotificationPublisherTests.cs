@@ -14,7 +14,7 @@ namespace Monitorify.Publisher.Email.Tests.Integration
             // Arrange
             var builder = new ConfigurationBuilder().AddEnvironmentVariables();
             var envConfig = builder.Build();
-            string password = envConfig["smtpPassword"];
+            string password = envConfig["monitorify_smtpPassword"];
 
             var endpoint = new EndPoint { Name = "Google", Url = "https://www.google.com", LastOutageTimeSpan = DateTime.UtcNow.AddMinutes(-1) - DateTime.UtcNow.AddMinutes(-2) };
             var config = new EmailNotificationPublisherConfig("smtp-mail.outlook.com", 587, false, "monitorify@outlook.com", password, "monitorify@outlook.com", "monitorify@outlook.com");

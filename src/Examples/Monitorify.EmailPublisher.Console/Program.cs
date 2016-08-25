@@ -14,7 +14,7 @@ namespace Monitorify.EmailPublisher.Console
         {
             var builder = new ConfigurationBuilder().AddEnvironmentVariables();
             var envConfig = builder.Build();
-            string password = envConfig["smtpPassword"];
+            string password = envConfig["monitorify_smtpPassword"];
 
             string filepath = Path.Combine(Directory.GetCurrentDirectory(), "config.json");
 

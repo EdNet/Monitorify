@@ -7,10 +7,6 @@
     {
       "name": "bing",
       "url": "http://www.bing.com"
-    },
-    {
-      "name": "api",
-      "url": "http://local.api.mtaxi.ee/api/heartbeat"
     }
   ],
   "pingDelay": "00:00:05"

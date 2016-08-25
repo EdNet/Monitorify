@@ -25,24 +25,31 @@ namespace Monitorify.Core
             _listeners = new List<IUrlListener>();
         }
 
-        public void Start(IConfiguration configuration)
+        public Task Start(IConfiguration configuration)
         {
-            foreach (var endPoint in configuration.EndPoints)
+            ServiceStatus = ServiceStatus.Loading;
+            return Task.Run(() =>
             {
-                IUrlListener listener = this.UrlListenerFactory.Invoke();
-                _listeners.Add(listener);
-
-                SubscribeForEvents(listener);
-                Task.Factory.StartNew(() =>
+                foreach (var endPoint in configuration.EndPoints)
                 {
-                    using (IHttpClient httpClient = HttpClientFactory.Invoke())
+                    IUrlListener listener = this.UrlListenerFactory.Invoke();
+                    _listeners.Add(listener);
+
+                    SubscribeForEvents(listener);
+                    Task.Factory.StartNew(() =>
                     {
-                        listener.HttpClient = httpClient;
-                        listener.StartListening(endPoint, configuration.PingDelay);
-                    }
-                });
-            }
+                        using (IHttpClient httpClient = HttpClientFactory.Invoke())
+                        {
+                            listener.HttpClient = httpClient;
+                            listener.StartListening(endPoint, configuration.PingDelay);
+                            ServiceStatus = ServiceStatus.Running;
+                        }
+                    });
+                }
+            });
         }
+
+        public ServiceStatus ServiceStatus { get; set; }
 
         internal Func<IUrlListener> UrlListenerFactory
         {

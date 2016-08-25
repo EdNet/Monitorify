@@ -24,7 +24,7 @@ namespace Monitorify.Core.Tests.Unit
             monitorifyService.UrlListenerFactory = () => urlListenerMock.Object;
 
             // Act
-            monitorifyService.Start(configurationMock.Object);
+            await monitorifyService.Start(configurationMock.Object);
             await Task.Delay(100);
 
             // Assert
@@ -32,7 +32,7 @@ namespace Monitorify.Core.Tests.Unit
         }
 
         [Fact]
-        public void Start_EndpointIsOnline_OnlineTimeIsRecorded()
+        public async void Start_EndpointIsOnline_OnlineTimeIsRecorded()
         {
             // Arrange
             Mock<IConfiguration> configurationMock = new Mock<IConfiguration>();
@@ -46,7 +46,7 @@ namespace Monitorify.Core.Tests.Unit
             monitorifyService.UrlListenerFactory = () => urlListenerMock.Object;
 
             // Act
-            monitorifyService.Start(configurationMock.Object);
+            await monitorifyService.Start(configurationMock.Object);
             urlListenerMock.Raise(m => m.ReportedOnline += point => { }, endpoint);
 
             // Assert
@@ -55,7 +55,7 @@ namespace Monitorify.Core.Tests.Unit
         }
 
         [Fact]
-        public void Start_EndpointIsOffline_OfflineTimeIsRecorded()
+        public async void Start_EndpointIsOffline_OfflineTimeIsRecorded()
         {
             // Arrange
             Mock<IConfiguration> configurationMock = new Mock<IConfiguration>();
@@ -69,7 +69,7 @@ namespace Monitorify.Core.Tests.Unit
             monitorifyService.UrlListenerFactory = () => urlListenerMock.Object;
 
             // Act
-            monitorifyService.Start(configurationMock.Object);
+            await monitorifyService.Start(configurationMock.Object);
             urlListenerMock.Raise(m => m.ReportedOffline += point => { }, endpoint);
 
             // Assert
@@ -78,7 +78,7 @@ namespace Monitorify.Core.Tests.Unit
         }
 
         [Fact]
-        public void Start_EndpointWasOfflineAndNowOnline_BackOnlineEventIsTriggered()
+        public async void Start_EndpointWasOfflineAndNowOnline_BackOnlineEventIsTriggered()
         {
             // Arrange
             Mock<IConfiguration> configurationMock = new Mock<IConfiguration>();
@@ -95,7 +95,7 @@ namespace Monitorify.Core.Tests.Unit
             monitorifyService.BackOnline += point => { backOnlineIsTriggered = true; };
 
             // Act
-            monitorifyService.Start(configurationMock.Object);
+            await monitorifyService.Start(configurationMock.Object);
             urlListenerMock.Raise(m => m.ReportedOnline += point => { }, endpoint);
             urlListenerMock.Raise(m => m.ReportedOffline += point => { }, endpoint);
             urlListenerMock.Raise(m => m.ReportedOnline += point => { }, endpoint);

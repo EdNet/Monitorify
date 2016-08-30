@@ -35,7 +35,3 @@ Monitorify is a simple url listener that triggers notification once endpoint goe
 ----------------------------------------
 1. Add additional Nuget source https://www.myget.org/F/aspnetcidev/api/v3/index.json <br />
 2. Build solution
-
-# Where can I get it?
-
-    PM> Install-Package Monitorify.Core

@@ -1,5 +1,5 @@
 ﻿{
-  "version": "1.0.0-*",
+  "version": "1.0.0.0",
   "testRunner": "xunit",
 
   "dependencies": {
@@ -28,7 +28,7 @@
 
   "tools": {
     "Microsoft.DotNet.Watcher.Tools": {
-      "version": "1.0.0-*",
+      "version": "1.0.0",
       "imports": "portable-net451+win8"
     }
   }

@@ -29,9 +29,3 @@ Monitorify is a simple url listener that triggers notification once endpoint goe
             IMonitorifyNotifier notifier = new MonitorifyNotifier();
             notifier.AddEmailPublisher(emailConfig);
             notifier.ListenAndNotify(configuration).Wait();
-            
-
-# How do I build solution?
-----------------------------------------
-1. Add additional Nuget source https://www.myget.org/F/aspnetcidev/api/v3/index.json <br />
-2. Build solution

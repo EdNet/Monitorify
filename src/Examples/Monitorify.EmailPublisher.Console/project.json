@@ -9,9 +9,9 @@
     "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.0.0",
     "Microsoft.NETCore.App": {
       "type": "platform",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
-    "Monitorify.Core": "1.1.0.1-*",
+    "Monitorify.Core": "1.1.0.*",
     "Monitorify.Publisher": "1.0.0.0-*",
     "Monitorify.Publisher.Email": "1.0.0.0-*"
   },

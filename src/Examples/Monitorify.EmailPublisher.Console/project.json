@@ -7,18 +7,21 @@
   "dependencies": {
     "Microsoft.Extensions.Configuration": "1.0.0",
     "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.0.0",
-    "Microsoft.NETCore.App": {
-      "type": "platform",
-      "version": "1.0.1"
-    },
+
     "Monitorify.Core": "1.1.0.*",
     "Monitorify.Publisher": "1.0.0.0-*",
     "Monitorify.Publisher.Email": "1.0.0.0-*"
   },
 
   "frameworks": {
-    "netcoreapp1.0": {
-      "imports": "dnxcore50"
-    }
+      "netcoreapp1.1": {
+          "dependencies": {
+              "Microsoft.NETCore.App": {
+                  "type": "platform",
+                  "version": "1.1.0"
+              }
+          },
+          "imports": "dnxcore50"
+      }
   }
 }

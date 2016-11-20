@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Threading;
 using Monitorify.Core;
 using Monitorify.Core.Configuration;
 
@@ -27,7 +28,9 @@ namespace Monitorify.Console
 
             service.Start(configuration).Wait();
 
-            System.Console.ReadLine();
+            while (true) {
+                Thread.Sleep(5000);
+            }
         }
     }
 }

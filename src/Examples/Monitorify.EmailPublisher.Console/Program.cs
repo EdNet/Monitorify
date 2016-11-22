@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Threading;
 using Microsoft.Extensions.Configuration;
 using Monitorify.Core.Configuration;
 using Monitorify.Publisher;
@@ -16,6 +17,12 @@ namespace Monitorify.EmailPublisher.Console
             var envConfig = builder.Build();
             string password = envConfig["monitorify_smtpPassword"];
 
+            if (string.IsNullOrEmpty(password))
+            {
+                System.Console.WriteLine("Password env variabale is not set!");
+                return;
+            }
+
             string filepath = Path.Combine(Directory.GetCurrentDirectory(), "config.json");
 
             IConfigurationReader provider = new JsonFileConfigurationReader();
@@ -29,7 +36,9 @@ namespace Monitorify.EmailPublisher.Console
             notifier.AddEmailPublisher(emailConfig);
             notifier.ListenAndNotify(configuration).Wait();
 
-            System.Console.ReadLine();
+            while (true) {
+                Thread.Sleep(5000);
+            }
         }
     }
 }

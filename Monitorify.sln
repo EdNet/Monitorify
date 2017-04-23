@@ -1,34 +1,31 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FC1A1009-2B3F-47E4-B152-4E9DAF4E2949}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E607C629-A09A-4AA9-97D0-577C18AF26F8}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Monitorify.Core.Console", "src\Examples\Monitorify.Core.Console\Monitorify.Core.Console.xproj", "{19F94F62-DADB-4A7C-BE14-3862821D1E40}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Monitorify.Core", "src\Monitorify.Core\Monitorify.Core.xproj", "{725BAD53-26DA-4654-9E0D-E68C3F0B3438}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0CEE72C2-4538-4569-8D48-F2FD1B77F386}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Monitorify.Core.Tests.Unit", "src\Tests\Monitorify.Core.Tests.Unit\Monitorify.Core.Tests.Unit.xproj", "{A9647B3F-C278-4174-BF98-193ACD030716}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Monitorify.Publisher", "src\Monitorify.Publisher\Monitorify.Publisher.xproj", "{3F4C2CA5-EC2C-43D5-A34B-C0AFEE317A2E}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Monitorify.Publisher.Tests.Unit", "src\Tests\Monitorify.Publisher.Tests.Unit\Monitorify.Publisher.Tests.Unit.xproj", "{4582DCFD-1563-45F5-8C55-7FCAC1A12B2A}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Monitorify.Publisher.Email", "src\Monitorify.Publisher.Email\Monitorify.Publisher.Email.xproj", "{516F69AF-DBAE-4717-B6FD-32BF92CD6443}"
-EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Monitorify.Publisher.Email.Tests.Integration", "src\Tests\Monitorify.Publisher.Email.Tests.Integration\Monitorify.Publisher.Email.Tests.Integration.xproj", "{13DD1627-8F13-405A-B904-FC279FCE95A6}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{ECD6B6DB-BA3D-44D3-AB19-20817C27939C}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Monitorify.EmailPublisher.Console", "src\Examples\Monitorify.EmailPublisher.Console\Monitorify.EmailPublisher.Console.xproj", "{E413AC61-0F75-434D-A32C-C1476699A8B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monitorify.Core.Console", "src\Examples\Monitorify.Core.Console\Monitorify.Core.Console.csproj", "{19F94F62-DADB-4A7C-BE14-3862821D1E40}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monitorify.Core", "src\Monitorify.Core\Monitorify.Core.csproj", "{725BAD53-26DA-4654-9E0D-E68C3F0B3438}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monitorify.Core.Tests.Unit", "src\Tests\Monitorify.Core.Tests.Unit\Monitorify.Core.Tests.Unit.csproj", "{A9647B3F-C278-4174-BF98-193ACD030716}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monitorify.Publisher", "src\Monitorify.Publisher\Monitorify.Publisher.csproj", "{3F4C2CA5-EC2C-43D5-A34B-C0AFEE317A2E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monitorify.Publisher.Tests.Unit", "src\Tests\Monitorify.Publisher.Tests.Unit\Monitorify.Publisher.Tests.Unit.csproj", "{4582DCFD-1563-45F5-8C55-7FCAC1A12B2A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monitorify.Publisher.Email", "src\Monitorify.Publisher.Email\Monitorify.Publisher.Email.csproj", "{516F69AF-DBAE-4717-B6FD-32BF92CD6443}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monitorify.Publisher.Email.Tests.Integration", "src\Tests\Monitorify.Publisher.Email.Tests.Integration\Monitorify.Publisher.Email.Tests.Integration.csproj", "{13DD1627-8F13-405A-B904-FC279FCE95A6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Monitorify.EmailPublisher.Console", "src\Examples\Monitorify.EmailPublisher.Console\Monitorify.EmailPublisher.Console.csproj", "{E413AC61-0F75-434D-A32C-C1476699A8B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,15 +70,15 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{0CEE72C2-4538-4569-8D48-F2FD1B77F386} = {FC1A1009-2B3F-47E4-B152-4E9DAF4E2949}
+		{ECD6B6DB-BA3D-44D3-AB19-20817C27939C} = {FC1A1009-2B3F-47E4-B152-4E9DAF4E2949}
 		{19F94F62-DADB-4A7C-BE14-3862821D1E40} = {ECD6B6DB-BA3D-44D3-AB19-20817C27939C}
 		{725BAD53-26DA-4654-9E0D-E68C3F0B3438} = {FC1A1009-2B3F-47E4-B152-4E9DAF4E2949}
-		{0CEE72C2-4538-4569-8D48-F2FD1B77F386} = {FC1A1009-2B3F-47E4-B152-4E9DAF4E2949}
 		{A9647B3F-C278-4174-BF98-193ACD030716} = {0CEE72C2-4538-4569-8D48-F2FD1B77F386}
 		{3F4C2CA5-EC2C-43D5-A34B-C0AFEE317A2E} = {FC1A1009-2B3F-47E4-B152-4E9DAF4E2949}
 		{4582DCFD-1563-45F5-8C55-7FCAC1A12B2A} = {0CEE72C2-4538-4569-8D48-F2FD1B77F386}
 		{516F69AF-DBAE-4717-B6FD-32BF92CD6443} = {FC1A1009-2B3F-47E4-B152-4E9DAF4E2949}
 		{13DD1627-8F13-405A-B904-FC279FCE95A6} = {0CEE72C2-4538-4569-8D48-F2FD1B77F386}
-		{ECD6B6DB-BA3D-44D3-AB19-20817C27939C} = {FC1A1009-2B3F-47E4-B152-4E9DAF4E2949}
 		{E413AC61-0F75-434D-A32C-C1476699A8B2} = {ECD6B6DB-BA3D-44D3-AB19-20817C27939C}
 	EndGlobalSection
 EndGlobal

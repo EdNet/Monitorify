@@ -2,8 +2,15 @@
 *.cache
 bin
 obj
+.vscode/
 packages
 .vs
 .idea
+.DS_Store
 *.ncrunchproject
 /*.ncrunchsolution
+*.userprefs
+*.csproj.nuget*
+*.nuget.props
+*.assets.json
+*.packagespec.json

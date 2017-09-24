@@ -4,11 +4,11 @@
     <Description>Simple url listener that triggers notification once endpoint goes down.</Description>
     <VersionPrefix>1.1.0.2</VersionPrefix>
     <Authors>Eduard Truuvaart</Authors>
-    <TargetFramework>netstandard1.6</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Monitorify.Core</AssemblyName>
     <PackageId>Monitorify.Core</PackageId>
     <PackageProjectUrl>https://github.com/EdNet/Monitorify</PackageProjectUrl>
-    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
+    <NetStandardImplicitPackageVersion>2.0</NetStandardImplicitPackageVersion>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>

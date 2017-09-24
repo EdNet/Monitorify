@@ -2,14 +2,15 @@
 using Microsoft.Extensions.Logging;
 using Monitorify.Core;
 using Moq;
-using Xunit;
+using NUnit.Framework;
 
 namespace Monitorify.Publisher.Tests.Unit
 {
+    [TestFixture]
     public class MonitorifyNotifierTests
     {
-        [Fact]
-        public async void ListenAndNotify_MonitorifyServiceIsStarted()
+        [Test]
+        public async Task ListenAndNotify_MonitorifyServiceIsStarted()
         {
             // Arrange
             var configurationMock = new Mock<Core.Configuration.IConfiguration>();
@@ -25,8 +26,8 @@ namespace Monitorify.Publisher.Tests.Unit
         }
 
 
-        [Fact]
-        public async void ListenAndNotify_EndpointWentOffline_PublishersTriggerNotifyOffline()
+        [Test]
+        public async Task ListenAndNotify_EndpointWentOffline_PublishersTriggerNotifyOffline()
         {
             // Arrange
             var endpoint = new EndPoint { Name = "Test", Url = "http://test.test" };
@@ -47,8 +48,8 @@ namespace Monitorify.Publisher.Tests.Unit
             publisherMock.Verify(x => x.NotifyOffline(endpoint));
         }
 
-        [Fact]
-        public async void ListenAndNotify_EndpointBackOnline_PublishersTriggerBackOnline()
+        [Test]
+        public async Task ListenAndNotify_EndpointBackOnline_PublishersTriggerBackOnline()
         {
             // Arrange
             var endpoint = new EndPoint { Name = "Test", Url = "http://test.test" };

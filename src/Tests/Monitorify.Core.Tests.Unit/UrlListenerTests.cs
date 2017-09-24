@@ -4,13 +4,14 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Monitorify.Core.HttpWrapper;
 using Moq;
-using Xunit;
+using NUnit.Framework;
 
 namespace Monitorify.Core.Tests.Unit
 {
+    [TestFixture]
     public class UrlListenerTests
     {
-        [Fact]
+        [Test]
         public void StartListening_EndpointIsValid_HttpRequestIsMade()
         {
             // Arrange
@@ -34,8 +35,8 @@ namespace Monitorify.Core.Tests.Unit
             httpMock.Verify(x => x.GetAsync(endPoint.Url), Times.AtLeastOnce);
         }
 
-        [Fact]
-        public async void StartListening_EndpointIsOnline_OnlineEventIsRised()
+        [Test]
+        public async Task StartListening_EndpointIsOnline_OnlineEventIsRised()
         {
             // Arrange
             Mock<IHttpClient> httpMock = new Mock<IHttpClient>();
@@ -64,8 +65,8 @@ namespace Monitorify.Core.Tests.Unit
             Assert.True(endpointIsOnline);
         }
 
-        [Fact]
-        public async void StartListening_EndpointIsOffline_OfflineEventIsRised()
+        [Test]
+        public async Task StartListening_EndpointIsOffline_OfflineEventIsRised()
         {
             // Arrange
             Mock<IHttpClient> httpMock = new Mock<IHttpClient>();
@@ -94,8 +95,8 @@ namespace Monitorify.Core.Tests.Unit
             Assert.True(endpointIsOffline);
         }
 
-        [Fact]
-        public async void StartListening_ExceptionIsThrown_ErrorEventIsRaised()
+        [Test]
+        public async Task StartListening_ExceptionIsThrown_ErrorEventIsRaised()
         {
             // Arrange
             Mock<IHttpClient> httpMock = new Mock<IHttpClient>();

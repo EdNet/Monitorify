@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Monitorify.Core.Configuration;
 using Moq;
-using Xunit;
+using NUnit.Framework;
 
 namespace Monitorify.Core.Tests.Unit
 {
+    [TestFixture]
     public class MonitorifyServiceTests
     {
-        [Fact]
-        public async void Start_ListeneresAreConfigured_ListenerStartListeningIsExecuted()
+        [Test]
+        public async Task Start_ListeneresAreConfigured_ListenerStartListeningIsExecuted()
         {
             // Arrange
             Mock<IConfiguration> configurationMock = new Mock<IConfiguration>();
@@ -31,8 +32,8 @@ namespace Monitorify.Core.Tests.Unit
             urlListenerMock.Verify(x => x.StartListening(endpoint, delay));
         }
 
-        [Fact]
-        public async void Start_EndpointIsOnline_OnlineTimeIsRecorded()
+        [Test]
+        public async Task Start_EndpointIsOnline_OnlineTimeIsRecorded()
         {
             // Arrange
             Mock<IConfiguration> configurationMock = new Mock<IConfiguration>();
@@ -54,8 +55,8 @@ namespace Monitorify.Core.Tests.Unit
             Assert.True(endpoint.Status == EndpointStatus.Online);
         }
 
-        [Fact]
-        public async void Start_EndpointIsOffline_OfflineTimeIsRecorded()
+        [Test]
+        public async Task Start_EndpointIsOffline_OfflineTimeIsRecorded()
         {
             // Arrange
             Mock<IConfiguration> configurationMock = new Mock<IConfiguration>();
@@ -77,8 +78,8 @@ namespace Monitorify.Core.Tests.Unit
             Assert.True(endpoint.Status == EndpointStatus.Offline);
         }
 
-        [Fact]
-        public async void Start_EndpointWasOfflineAndNowOnline_BackOnlineEventIsTriggered()
+        [Test]
+        public async Task Start_EndpointWasOfflineAndNowOnline_BackOnlineEventIsTriggered()
         {
             // Arrange
             Mock<IConfiguration> configurationMock = new Mock<IConfiguration>();

@@ -1,15 +1,17 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Monitorify.Core;
-using Xunit;
+using NUnit.Framework;
 
 namespace Monitorify.Publisher.Email.Tests.Integration
 {
+    [TestFixture]
     public class EmailNotificationPublisherTests
     {
-        [Trait("Category", "Integration")]
-        [Fact]
-        public async void SendMessage_SmtpIsConfiguredCorrectly_MessageIsSent()
+        [Category("Integration")]
+        [Test]
+        public async Task SendMessage_SmtpIsConfiguredCorrectly_MessageIsSent()
         {
             // Arrange
             var builder = new ConfigurationBuilder().AddEnvironmentVariables();
